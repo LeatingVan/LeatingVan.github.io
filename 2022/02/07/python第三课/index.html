@@ -1,0 +1,1626 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="python函数与面向对象, 丽婷的blog">
+    <meta name="description" content="1.函数1.1 定义函数下面是一个打印问候语的简单函数，名为greet_user()：
+12345def greet_user():    &#34;&#34;&#34;显示简单的问候语&#34;&#34;&#34;    print(&#34;Hello!&#34;)    greet_user()
+">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>python函数与面向对象 | 丽婷的blog</title>
+    <link rel="icon" type="image/png" href="https://github.com/LeatingVan/Image/blob/main/img/202202051736389.jpg?raw=true">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://github.com/LeatingVan/Image/blob/main/cover/202202061931197.jpg?raw=true);
+       background-repeat:no-repeat;
+       background-size: 100% 100%;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://github.com/LeatingVan/Image/blob/main/img/202202051736389.jpg?raw=true" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">丽婷的blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-castle" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tag" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/navigate" class="waves-effect waves-light">
+      
+      <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
+      
+      <span>快捷导航</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://github.com/LeatingVan/Image/blob/main/img/202202051736389.jpg?raw=true" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">丽婷的blog</div>
+        <div class="logo-desc">
+            
+            星星在天上，而你在我心里(●&#39;◡&#39;●)~
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-castle"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tag" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/navigate" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-location-arrow"></i>
+			
+			快捷导航
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #8d8bf3;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">python函数与面向对象</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-02-07
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="1-函数"><a href="#1-函数" class="headerlink" title="1.函数"></a>1.函数</h2><h4 id="1-1-定义函数"><a href="#1-1-定义函数" class="headerlink" title="1.1 定义函数"></a><strong>1.1 定义函数</strong></h4><p>下面是一个打印问候语的简单函数，名为greet_user()：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span>():</span></span><br><span class="line">    <span class="string">"""显示简单的问候语"""</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello!"</span>)</span><br><span class="line">    </span><br><span class="line">greet_user()</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>def</strong> 是关键字 表示定义一个函数</p>
+<p>后面是函数的<strong>名字</strong>，紧接着后面需要一个<strong>括号</strong> ，这个括号中间，根据需要还可以有 <strong>参数</strong>,这里我们先不讲它</p>
+<p>最后是一个<strong>冒号</strong>，下面的缩进的代码表示这个函数名字代表的具体动作是什么，称之为<strong>函数体</strong>。</p>
+<p>函数体的代码是需要缩进的。我们建议缩进四个空格</p>
+<p>greet_user() 就叫 <strong>调用函数</strong> greet_user ，有时也叫做 <strong>执行函数</strong> greet_user。</p>
+<p>当解释器 执行到 这行调用函数的代码时，就会跑到 函数 greet_user 里面，去执行函数里面的语句。</p>
+<p>函数必须先定义，后面才能调用。</p>
+<p>函数可以调用任意次。</p>
+<h4 id="5-2-函数的参数"><a href="#5-2-函数的参数" class="headerlink" title="5.2 函数的参数"></a><strong>5.2 函数的参数</strong></h4><p>只需稍作修改，就可以让函数greet_user()不仅向用户显示Hello!，还将用户的名字用作抬头。为此，可在函数定义def greet_user()的括号内添加username。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">greet_user</span>(<span class="params">username</span>):</span></span><br><span class="line">    <span class="string">"""显示简单的问候语"""</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Hello, "</span> + username + <span class="string">"!"</span>)</span><br><span class="line">    </span><br><span class="line">greet_user(<span class="string">'jesse'</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>参数的作用 就是： <strong>提供 函数完成功能 所必须的信息</strong></p>
+<p>参数可以没有，可以是一个，也可以是多个。参数之间用<strong>逗号</strong>隔开。</p>
+<h5 id="实参和形参"><a href="#实参和形参" class="headerlink" title="实参和形参"></a><strong>实参和形参</strong></h5><p>在函数greet_user()的定义中，<strong>变量username是一个形参</strong>——函数完成其工作所需的一项信</p>
+<p>息。在代码greet_user(‘jesse’)中，<strong>值’jesse’是一个实参</strong>。实参是调用函数时传递给函数的信</p>
+<p>息。我们调用函数时，将要让函数使用的信息放在括号内。在greet_user(‘jesse’)中，将实参</p>
+<p>‘jesse’传递给了函数greet_user()，这个值被存储在形参username中。</p>
+<h5 id="位置实参"><a href="#位置实参" class="headerlink" title="位置实参"></a><strong>位置实参</strong></h5><p>你调用函数时，Python必须将函数调用中的每个实参都关联到函数定义中的一个形参。为此，</p>
+<p>最简单的关联方式是基于实参的顺序。这种关联方式被称为位置实参。</p>
+<p>来看一个显示宠物信息的函数。这个函数指出一个宠物属于哪种动物以及它叫什么名字，如下所示：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">animal_type, pet_name</span>):</span></span><br><span class="line">    <span class="string">"""显示宠物的信息"""</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"I have a "</span> + animal_type + <span class="string">"."</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"My "</span> + animal_type + <span class="string">"'s name is "</span> + pet_name + <span class="string">"."</span>)</span><br><span class="line">    </span><br><span class="line">describe_pet(<span class="string">'hamster'</span>, <span class="string">'harry'</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="关键字实参"><a href="#关键字实参" class="headerlink" title="关键字实参"></a><strong>关键字实参</strong></h5><p>关键字实参是传递给函数的名称—值对。你直接在实参中将名称和值关联起来了，因此向函</p>
+<p>数传递实参时不会混淆。</p>
+<p>关键字实参让你无需考虑函数调用中的实参顺序，还清楚地指出了函数调用中各个值的用途。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">animal_type, pet_name</span>):</span> </span><br><span class="line">	<span class="string">"""显示宠物的信息"""</span> </span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"I have a "</span> + animal_type + <span class="string">"."</span>) </span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"My "</span> + animal_type + <span class="string">"'s name is "</span> + pet_name + <span class="string">"."</span>) </span><br><span class="line"></span><br><span class="line">describe_pet(animal_type=<span class="string">'hamster'</span>, pet_name=<span class="string">'harry'</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>函数describe_pet()还是原来那样，但调用这个函数时，我们向Python明确地指出了各个实</p>
+<p>参对应的形参。看到这个函数调用时，Python知道应该将实参’hamster’和’harry’分别存储在形</p>
+<p>参animal_type和pet_name中。输出正确无误，它指出我们有一只名为Harry的仓鼠。</p>
+<p><strong>关键字实参的顺序无关紧要</strong>，因为Python知道各个值该存储到哪个形参中。下面两个函数调</p>
+<p>用是等效的：</p>
+<p>describe_pet(animal_type=’hamster’, pet_name=’harry’) </p>
+<p>describe_pet(pet_name=’harry’, animal_type=’hamster’) </p>
+<p>注意 使用关键字实参时，务必准确地指定函数定义中的形参名。</p>
+<p><em><strong>练习</strong></em></p>
+<p>请开发一个函数，该函数 接受两个字符串参数，</p>
+<p>我们的函数需要 获取参数中的人名和年龄，并打印出名字和年龄。调用后的结果如下：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">他的名字是：关羽</span><br><span class="line">他的年龄是：28</span><br></pre></td></tr></tbody></table></figure>
+
+<p>调用函数传参数时，分别使用 <strong>指定参数名调用和 不指定参数名调用</strong> 的方式。</p>
+<h5 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h5><p>这种前面加<strong>一个星号</strong>的参数，称之为可变参数，在调用该函数的时候，Python解释器会创建一个 tuple 赋值给这个参数变量。并且会把 传入的数据对象 放到这个tuple对象里面。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span>  <span class="title">printAge</span>(<span class="params">*students</span>) :</span></span><br><span class="line">    <span class="keyword">for</span> student <span class="keyword">in</span> students:</span><br><span class="line">        <span class="built_in">print</span>( <span class="string">f'学生：<span class="subst">{student}</span>‘)</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">printAge('</span>张飞<span class="string">', '</span>典韦<span class="string">', '</span>关羽<span class="string">')</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>调用代码执行的时候，Python解释器创建一个 tuple 赋值给这个 students，里面存放了 ‘张飞’, ‘典韦’, ‘关羽’ 三个字符串对象作为元素。</p>
+<p>这种前面加<strong>2个星号</strong>的参数，称之为关键字可变参数，</p>
+<p>在调用该函数的时候，Python解释器会创建一个 dict （字典） 赋值给这个参数变量。</p>
+<p>传入的参数对象，必须是像 <code>name=value</code>这种 带参数名和参数值的， 放到dict对象时，参数名是字典元素的key，参数值是字典元素的value。</p>
+<p>比如，我们要实现一个函数，可以输入不定数量的学生信息，包括姓名和年龄。</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addStudents</span>(<span class="params">**students</span>):</span></span><br><span class="line">    <span class="keyword">for</span> name,age <span class="keyword">in</span> students.items():</span><br><span class="line">        <span class="built_in">print</span>(name)</span><br><span class="line">        <span class="built_in">print</span>(age)</span><br><span class="line"></span><br><span class="line">addStudents(李白=<span class="number">20</span>, 杜甫=<span class="number">24</span>)</span><br><span class="line">addStudents(Jodan=<span class="number">45</span>, James=<span class="number">32</span>, onil=<span class="number">40</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<p><em><strong>练习</strong></em></p>
+<p>请写一个函数 add_all，该函数参数为任意数量的数字，请在函数中计算这些数字的和</p>
+<h4 id="5-3默认值"><a href="#5-3默认值" class="headerlink" title="5.3默认值"></a>5.3默认值</h4><p>编写函数时，可给每个形参指定默认值。在调用函数中给形参提供了实参时，Python将使用</p>
+<p>指定的实参值；否则，将使用形参的默认值。因此，给形参指定默认值后，可在函数调用中省略相应的实参。</p>
+<p>使用默认值可简化函数调用，还可清楚地指出函数的典型用法。</p>
+<p>例如，如果你发现调用describe_pet()时，描述的大都是小狗，就可将形参animal_type的默</p>
+<p>认值设置为’dog’。这样，调用describe_pet()来描述小狗时，就可不提供这种信息：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">describe_pet</span>(<span class="params">pet_name, animal_type=<span class="string">'dog'</span></span>):</span> </span><br><span class="line">	<span class="string">"""显示宠物的信息"""</span> </span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"I have a "</span> + animal_type + <span class="string">"."</span>) </span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"My "</span> + animal_type + <span class="string">"'s name is "</span> + pet_name + <span class="string">"."</span>) </span><br><span class="line"></span><br><span class="line">describe_pet(pet_name=<span class="string">'willie'</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h4 id="5-4返回值"><a href="#5-4返回值" class="headerlink" title="5.4返回值"></a><strong>5.4返回值</strong></h4><blockquote>
+<p>函数并非总是直接显示输出，相反，它可以处理一些数据，并返回一个或一组值。函数返回</p>
+<p>的值被称为返回值。在函数中，可使用return语句将值返回到调用函数的代码行。返回值让你能</p>
+<p>够将程序的大部分繁重工作移到函数中去完成，从而简化主程序。</p>
+</blockquote>
+<p>下面来看一个函数，它接受名和姓并返回整洁的姓名：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_formatted_name</span>(<span class="params">first_name, last_name</span>):</span> </span><br><span class="line">	<span class="string">"""返回整洁的姓名"""</span> </span><br><span class="line">	full_name = first_name + <span class="string">' '</span> + last_name </span><br><span class="line">	<span class="keyword">return</span> full_name</span><br><span class="line"></span><br><span class="line">musician = get_formatted_name(<span class="string">'jimi'</span>, <span class="string">'hendrix'</span>) </span><br><span class="line"><span class="built_in">print</span>(musician) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>函数get_formatted_name()的定义通过形参接受名和姓。它将姓和名合而为一，在它</p>
+<p>们之间加上一个空格，并将结果存储在变量full_name中。然后，将full_name的值<strong>返回(用return)<strong>到函数调用行。调用返回值的函数时，</strong>需要提供一个变量，用于存储返回的值</strong>。在这里，将返回值存储在了变量musician中。输出为整洁的姓名</p>
+<p><em><strong>练习</strong></em></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">squarep1</span>(<span class="params">num1,num2</span>):</span></span><br><span class="line">    ret = num1**<span class="number">2</span> + num2**<span class="number">2</span></span><br><span class="line">    <span class="built_in">print</span>(ret)</span><br><span class="line"></span><br><span class="line">ret = squarep1(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在下面的代码中进行补充，使得到的结果和上面的相同</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">squarep2</span>(<span class="params">num1,num2</span>):</span></span><br><span class="line">    ret = num1**<span class="number">2</span> + num2**<span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line"></span><br><span class="line">ret = squarep2(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(ret)</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h4 id="5-5常用-内置函数"><a href="#5-5常用-内置函数" class="headerlink" title="5.5常用 内置函数"></a>5.5常用 内置函数</h4><p><img src="/.com//jf\上课用\WY\2020-11-20_172244.png" alt="2020-11-20_172244"></p>
+<h5 id="int"><a href="#int" class="headerlink" title="int()"></a>int()</h5><p>int 函数 经常被我们用来把一个字符串转化为对应的整数</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>(<span class="string">'1000'</span>)   <span class="comment"># 返回整数1000</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>也经常用来把一个小数转化为对应的整数，去掉其中的小数部分</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span>(<span class="number">3456.23</span>)  <span class="comment"># 返回整数3456</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="float"><a href="#float" class="headerlink" title="float()"></a>float()</h5><p>float 函数 用来把一个字符串转化为对应的小数（浮点数）</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="string">'1000'</span>)    <span class="comment"># 返回 浮点数 1000.0</span></span><br><span class="line"><span class="built_in">float</span>(<span class="string">'6.345'</span>)   <span class="comment"># 返回 浮点数 6.345</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>也可以把一个整数对象转化为对应的小数对象</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">float</span>(<span class="number">1000</span>)  <span class="comment"># 返回浮点数 1000.0</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="str"><a href="#str" class="headerlink" title="str()"></a>str()</h5><p>str 函数 用来得到一个对象的字符串表示。</p>
+<p>经常被我们用来把数字转化为对应的字符串表示的数字</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>(<span class="number">1000</span>)   <span class="comment"># 返回字符串 '1000'</span></span><br><span class="line"><span class="built_in">str</span>(<span class="number">1000.23</span>)   <span class="comment"># 返回字符串 '1000.23'</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="len"><a href="#len" class="headerlink" title="len()"></a>len()</h5><p>len 函数 可以得到一个数据对象的长度，通常用来获取 字符串、列表、元组、字典等类型对象的元素个数。</p>
+<p>比如</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span> (<span class="built_in">len</span>(<span class="string">'你好！'</span>))<span class="comment"># 可以得到字符串的长度 3</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="type"><a href="#type" class="headerlink" title="type()"></a>type()</h5><p>type 函数 可以得到一个数据对象类型</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">type</span>(<span class="number">3</span>)        <span class="comment"># 返回  &lt;class 'int'&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">type</span>(<span class="string">'hello'</span>)  <span class="comment"># 返回  &lt;class 'str'&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h4 id="5-6将函数存储在模块中"><a href="#5-6将函数存储在模块中" class="headerlink" title="5.6将函数存储在模块中"></a>5.6将函数存储在模块中</h4><blockquote>
+<p>函数的优点之一是，使用它们可将代码块与主程序分离。通过给函数指定描述性名称，可让</p>
+<p>主程序容易理解得多。你还可以更进一步，将函数存储在被称为模块的独立文件中，</p>
+<p>再将模块导 入到主程序中。</p>
+<p>通过将函数存储在独立的文件中，可隐藏程序代码的细节，将重点放在程序的高层逻辑上。</p>
+<p>这还能让你在众多不同的程序中重用函数。</p>
+</blockquote>
+<p><strong>import语句</strong>允许在当前运行的程序文件中使用模块中的代码。</p>
+<p><strong>导入整个模块</strong></p>
+<p>要让函数是可导入的，得先创建模块。模块是扩展名为.py的文件，包含要导入到程序中的代码。</p>
+<p>只需编写一条import语句并在其中指定模块名，就可在程序中使用该模块中的所有函数。</p>
+<p>如果你使用这种import语句导入了名为module_name.py的整个模块，就可使</p>
+<p>用下面的语法来使用其中任何一个函数：</p>
+<p><em>module_name.function_name</em>()</p>
+<p>下面来创建一个包含函数make_pizza()的模块。为此，我们将文件pizza.py中除函数</p>
+<p>make_pizza()之外的其他代码都删除：</p>
+<p>pizza.py </p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_pizza</span>(<span class="params">size, *toppings</span>):</span> </span><br><span class="line">	<span class="string">"""概述要制作的比萨"""</span> </span><br><span class="line"> 	<span class="built_in">print</span>(<span class="string">"\nMaking a "</span> + <span class="built_in">str</span>(size) + </span><br><span class="line"> 	<span class="string">"-inch pizza with the following toppings:"</span>) </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> topping <span class="keyword">in</span> toppings: </span><br><span class="line">		<span class="built_in">print</span>(<span class="string">"- "</span> + topping) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>接下来，我们在pizza.py<strong>所在的目录中创建</strong>另一个名为making_pizzas.py的文件，这个文件导</p>
+<p>入刚创建的模块，再调用make_pizza()两次：</p>
+<p>making_pizzas.py </p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pizza </span><br><span class="line">pizza.make_pizza(<span class="number">16</span>, <span class="string">'pepperoni'</span>) </span><br><span class="line">pizza.make_pizza(<span class="number">12</span>, <span class="string">'mushrooms'</span>, <span class="string">'green peppers'</span>, <span class="string">'extra cheese'</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>在making_pizzas.py中，可以使用pizza.py中定义的所有函数。</p>
+<p>要调用被导入的模块中的函数，可指定导入的模块的名称pizza和函数名make_pizza()，并用</p>
+<p>句点分隔它们。</p>
+<p> <strong>导入特定的函数</strong></p>
+<p>你还可以导入模块中的特定函数，这种导入方法的语法如下：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> function_name</span><br></pre></td></tr></tbody></table></figure>
+
+<p>通过用逗号分隔函数名，可根据需要从模块中导入任意数量的函数：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> module_name <span class="keyword">import</span> function_0, function_1, function_2</span><br></pre></td></tr></tbody></table></figure>
+
+<p>对于前面的making_pizzas.py示例，如果只想导入要使用的函数，代码将类似于下面这样：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pizza <span class="keyword">import</span> make_pizza </span><br><span class="line"></span><br><span class="line">make_pizza(<span class="number">16</span>, <span class="string">'pepperoni'</span>) </span><br><span class="line">make_pizza(<span class="number">12</span>, <span class="string">'mushrooms'</span>, <span class="string">'green peppers'</span>, <span class="string">'extra cheese'</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>若使用这种语法，调用函数时就无需使用句点。由于我们在import语句中显式地导入了函数</p>
+<p>make_pizza()，因此调用它时只需指定其名称。</p>
+<p> <strong>使用 as 给函数指定别名</strong></p>
+<blockquote>
+<p>如果要导入的函数的名称可能与程序中现有的名称冲突，或者函数的名称太长，可指定简短而独一无二的别名——函数的另一个名称，类似于外号。要给函数指定这种特殊外号，需要在导入它时这样做。</p>
+</blockquote>
+<p>下面给函数make_pizza()指定了别名mp()。这是在import语句中使用make_pizza as mp实现的，</p>
+<p>关键字as将函数重命名为你提供的别名：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pizza <span class="keyword">import</span> make_pizza <span class="keyword">as</span> mp </span><br><span class="line"></span><br><span class="line">mp(<span class="number">16</span>, <span class="string">'pepperoni'</span>) </span><br><span class="line">mp(<span class="number">12</span>, <span class="string">'mushrooms'</span>, <span class="string">'green peppers'</span>, <span class="string">'extra cheese'</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>上面的import语句将函数make_pizza()重命名为mp()；在这个程序中，每当需要调用make_pizza()时，都可简写成mp()，而Python将运行make_pizza()中的代码，这可避免与这个程序可能包含的函数make_pizza()混淆。</p>
+<p>指定别名的通用语法如下：</p>
+<p>from <em>module_name</em> import <em>function_name</em> as <em>fn</em></p>
+<p><strong>使用 as 给模块指定别名</strong></p>
+<p>你还可以给模块指定别名。通过给模块指定简短的别名（如给模块pizza指定别名p），让你</p>
+<p>能够更轻松地调用模块中的函数。相比于pizza.make_pizza()，p.make_pizza()更为简洁：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pizza <span class="keyword">as</span> p </span><br><span class="line"></span><br><span class="line">p.make_pizza(<span class="number">16</span>, <span class="string">'pepperoni'</span>) </span><br><span class="line">p.make_pizza(<span class="number">12</span>, <span class="string">'mushrooms'</span>, <span class="string">'green peppers'</span>, <span class="string">'extra cheese'</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>上述import语句给模块pizza指定了别名p，但该模块中所有函数的名称都没变。调用函数</p>
+<p>make_pizza()时，可编写代码p.make_pizza()而不是pizza.make_pizza()，这样不仅能使代码更简</p>
+<p>洁，还可以让你不再关注模块名，而专注于描述性的函数名。这些函数名明确地指出了函数的功</p>
+<p>能，对理解代码而言，它们比模块名更重要。</p>
+<p>给模块指定别名的通用语法如下：</p>
+<p>import <em>module_name as mn</em></p>
+<p><strong>导入模块中的所有函数</strong></p>
+<p>使用星号（*）运算符可让Python导入模块中的所有函数：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pizza <span class="keyword">import</span> * </span><br><span class="line"></span><br><span class="line">make_pizza(<span class="number">16</span>, <span class="string">'pepperoni'</span>) </span><br><span class="line">make_pizza(<span class="number">12</span>, <span class="string">'mushrooms'</span>, <span class="string">'green peppers'</span>, <span class="string">'extra cheese'</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>import语句中的星号让Python将模块pizza中的每个函数都复制到这个程序文件中。由于导入</p>
+<p>了每个函数，可通过名称来调用每个函数，而无需使用句点表示法。然而，使用并非自己编写的</p>
+<p>大型模块时，最好不要采用这种导入方法：如果模块中有函数的名称与你的项目中使用的名称相</p>
+<p>同，可能导致意想不到的结果：Python可能遇到多个名称相同的函数或变量，进而覆盖函数，而</p>
+<p>不是分别导入所有的函数。</p>
+<p>最佳的做法是，要么只<strong>导入你需要使用的函数，要么导入整个模块并使用句点表示法</strong>。这能</p>
+<p>让代码更清晰，更容易阅读和理解。这里之所以介绍这种导入方法，只是想让你在阅读别人编写</p>
+<p>的代码时，如果遇到类似于下面的import语句，能够理解它们：</p>
+<p>from <em>module_name</em> import * </p>
+<h2 id="2-面向对象class"><a href="#2-面向对象class" class="headerlink" title="2.面向对象class"></a>2.面向对象class</h2><blockquote>
+<p>面向对象编程是最有效的软件编写方法之一。在面向对象编程中，你编写表示现实世界中的事物和情景的类，并基于这些类来创建对象。</p>
+<p>编写类时，你定义一大类对象都有的通用行为。基于类创建<strong>对象</strong>时，每个对象都自动具备这种通用行为，然后可根据需要赋予每个对象独特的个性。</p>
+<p>根据类来创建对象被称为<strong>实例化</strong>，这让你能够使用类的实例。编写一些类并创建其实例。指定可在实例中存储什么信息，定义可对这些实例执行哪些操作。</p>
+</blockquote>
+<h4 id="6-1创建类"><a href="#6-1创建类" class="headerlink" title="6.1创建类"></a><strong>6.1创建类</strong></h4><p>使用类几乎可以模拟任何东西。下面来编写一个表示小狗的简单类Dog——它表示的不是特定的小狗，而是任何小狗。对于大多数宠物狗，我们都知道些什么呢？它们都有名字和年龄；我</p>
+<p>们还知道，大多数小狗还会蹲下和打滚。由于大多数小狗都具备上述两项信息（名字和年龄）和</p>
+<p>两种行为（蹲下和打滚），我们的Dog类将包含它们。这个类让Python知道如何创建表示小狗的对</p>
+<p>象。编写这个类后，我们将使用它来创建表示特定小狗的实例。</p>
+<p> <strong>创建 Dog 类</strong></p>
+<p>根据Dog类创建的每个实例都将存储名字和年龄。我们赋予了每条小狗蹲下（sit()）和打滚（roll_over()）的能力：</p>
+<p>dog.py </p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>():</span></span><br><span class="line">    <span class="string">"""一次模拟小狗的简单尝试"""</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">        <span class="string">"""初始化属性name和age"""</span></span><br><span class="line">        </span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sit</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">"""模拟小狗被命令时蹲下"""</span></span><br><span class="line">        <span class="built_in">print</span>(self.name + <span class="string">" is now sitting."</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">roll_over</span>(<span class="params">self</span>):</span></span><br><span class="line">    </span><br><span class="line">        <span class="string">"""模拟小狗被命令时打滚"""</span></span><br><span class="line">        <span class="built_in">print</span>(self.name + <span class="string">" rolled over!"</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>我们定义了一个名为Dog的类。根据约定，在Python中，<strong>首字母大写的名称指的是类</strong>。</p>
+<h4 id="6-2根据类创建实例"><a href="#6-2根据类创建实例" class="headerlink" title="6.2根据类创建实例"></a>6.2根据类创建实例</h4><p>可将类视为有关如何创建实例的说明。Dog类是一系列说明，让Python知道如何创建表示特</p>
+<p>定小狗的实例。下面来创建一个表示特定小狗的实例：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>():</span> </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Dog</span>():</span></span><br><span class="line">    <span class="string">"""一次模拟小狗的简单尝试"""</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">        <span class="string">"""初始化属性name和age"""</span></span><br><span class="line">        </span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sit</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">"""模拟小狗被命令时蹲下"""</span></span><br><span class="line">        <span class="built_in">print</span>(self.name + <span class="string">" is now sitting."</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">roll_over</span>(<span class="params">self</span>):</span></span><br><span class="line">    </span><br><span class="line">        <span class="string">"""模拟小狗被命令时打滚"""</span></span><br><span class="line">        <span class="built_in">print</span>(self.name + <span class="string">" rolled over!"</span>) </span><br><span class="line"></span><br><span class="line">my_dog = Dog(<span class="string">'willie'</span>, <span class="number">6</span>) </span><br><span class="line"><span class="built_in">print</span>(<span class="string">"My dog's name is "</span> + my_dog.name + <span class="string">"."</span>) </span><br><span class="line"><span class="built_in">print</span>(<span class="string">"My dog is "</span> + <span class="built_in">str</span>(my_dog.age) + <span class="string">" years old."</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>这里使用的是前一个示例中编写的Dog类。我们让Python创建一条名字为’willie’、年龄为6的小狗。遇到这行代码时，Python使用实参’willie’和6调用Dog类中的方法__init__()。</p>
+<p>方法__init__()创建一个表示特定小狗的示例，并使用我们提供的值来设置属性name和age。</p>
+<p>方法__init__()并未显式地包含return语句，但Python自动返回一个表示这条小狗的实例。我们将这个实例存储在变量my_dog中。</p>
+<p><strong>\1. 访问属性</strong></p>
+<p>要访问实例的属性，可使用句点表示法。我们编写了如下代码来访问my_dog的属性name的值：</p>
+<p><strong>my_dog.name</strong> </p>
+<p>句点表示法在Python中很常用，这种语法演示了Python如何获悉属性的值。在这里，Python</p>
+<p>先找到实例my_dog，再查找与这个实例相关联的属性name。在Dog类中引用这个属性时，使用的</p>
+<p>是self.name。我们使用同样的方法来获取属性age的值:my_dog.age</p>
+<p><strong>\2. 调用方法</strong></p>
+<p><strong>类中的函数称为方法</strong> </p>
+<p>根据Dog类创建实例后，就可以使用句点表示法来调用Dog类中定义的任何方法。下面来让小</p>
+<p>狗蹲下和打滚：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>():</span> </span><br><span class="line">	--*snip*--</span><br><span class="line">    </span><br><span class="line">my_dog = Dog(<span class="string">'willie'</span>, <span class="number">6</span>) </span><br><span class="line">my_dog.sit() </span><br><span class="line">my_dog.roll_over() </span><br></pre></td></tr></tbody></table></figure>
+
+<p>要调用方法，可指定实例的名称（这里是my_dog）和要调用的方法，并用句点分隔它们。遇</p>
+<p>到代码my_dog.sit()时，Python在类Dog中查找方法sit()并运行其代码。Python以同样的方式解读</p>
+<p>代码my_dog.roll_over()。</p>
+<p>这种语法很有用。如果给属性和方法指定了合适的描述性名称，如name、age、sit()和</p>
+<p>roll_over()，即便是从未见过的代码块，我们也能够轻松地推断出它是做什么的。</p>
+<h5 id="6-2-2-方法-init"><a href="#6-2-2-方法-init" class="headerlink" title="6.2.2 方法__init__()"></a><strong>6.2.2 方法__init__()</strong></h5><p>方法__init__()是一个特殊的方法，每当你根据Dog类创建新实例时，Python都会自动运行它。</p>
+<p>在这个方法的名称中，开头和末尾各有两个下划线，这是一种约定，旨在避免Python默认方法与普通方法发生名称冲突。</p>
+<p>我们将方法__init__()定义成了包含三个形参：self、name和age。在这个方法的定义中，形参self必不可少，还必须位于其他形参的前面。</p>
+<p>为何必须在方法定义中包含形参self呢？因为Python调用这个__init__()方法来创建Dog实例时，将自动传入实参self。</p>
+<p>每个与类相关联的方法调用都自动传递实参self，它是一 个指向实例本身的引用，让实例能够访问类中的属性和方法。</p>
+<p>我们创建Dog实例时，Python将调用Dog类的方法__init__()。我们将通过实参向Dog()传递名字和年龄；</p>
+<p>self会自动传递，因此我们不需要传递它。每当我们根据Dog类创建实例时，都只需给最</p>
+<p>后两个形参（name和age）提供值。</p>
+<p>定义的两个变量都有前缀self。以self为前缀的变量都可供类中的<strong>所有方法使用</strong>，我们</p>
+<p>还可以通过类的任何实例来访问这些变量。self.name = name获取存储在形参name中的值，并将</p>
+<p>其存储到变量name中，然后该变量被关联到当前创建的实例。self.age = age的作用与此类似。</p>
+<p><strong>像这样可通过实例访问的变量称为属性。</strong></p>
+<p>Dog类还定义了另外两个方法：sit()和roll_over()。由于这些方法不需要额外的信息，如名字或年龄，因此它们只有一个形参self。</p>
+<p>我们后面将创建的实例能够访问这些方法，换句话说，它们都会蹲下和打滚。当前，sit()和roll_over()所做的有限，它们只是打印一条消息，指出小狗正蹲下或打滚。但可以扩展这些方法以模拟实际情况：如果这个类包含在一个计算机游戏中，这些方法将包含创建小狗蹲下和打滚动画效果的代码。</p>
+<p><strong>\3. 创建多个实例</strong></p>
+<p>可按需求根据类创建任意数量的实例。下面再创建一个名为</p>
+<p>your_dog的实例：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>():</span> </span><br><span class="line">	--*snip*--</span><br><span class="line"></span><br><span class="line">my_dog = Dog(<span class="string">'willie'</span>, <span class="number">6</span>) </span><br><span class="line">your_dog = Dog(<span class="string">'lucy'</span>, <span class="number">3</span>) </span><br><span class="line"><span class="built_in">print</span>(<span class="string">"My dog's name is "</span> + my_dog.name + <span class="string">"."</span>) </span><br><span class="line"><span class="built_in">print</span>(<span class="string">"My dog is "</span> + <span class="built_in">str</span>(my_dog.age) + <span class="string">" years old."</span>) </span><br><span class="line">my_dog.sit() </span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">"\nYour dog's name is "</span> + your_dog.name + <span class="string">"."</span>) </span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Your dog is "</span> + <span class="built_in">str</span>(your_dog.age) + <span class="string">" years old."</span>) </span><br><span class="line">your_dog.sit() </span><br></pre></td></tr></tbody></table></figure>
+
+<p>在这个实例中，我们创建了两条小狗，它们分别名为Willie和Lucy。每条小狗都是一个独立</p>
+<p>的实例，有自己的一组属性，能够执行相同的操作：</p>
+<p>My dog’s name is Willie. </p>
+<p>My dog is 6 years old. </p>
+<p>Willie is now sitting. </p>
+<p>Your dog’s name is Lucy. </p>
+<p>Your dog is 3 years old. </p>
+<p>Lucy is now sitting. </p>
+<p>就算我们给第二条小狗指定同样的名字和年龄，Python依然会根据Dog类创建另一个实例。</p>
+<p>你可按需求根据一个类创建任意数量的实例，条件是将每个实例都存储在不同的变量中，或占用</p>
+<p>列表或字典的不同位置。</p>
+<p><strong>给属性指定默认值</strong></p>
+<p>类中的每个属性都必须有初始值，哪怕这个值是0或空字符串。在有些情况下，如设置默认</p>
+<p>值时，在方法__init__()内指定这种初始值是可行的；如果你对某个属性这样做了，就无需包含</p>
+<p>为它提供初始值的形参。</p>
+<p>下面来添加一个名为odometer_reading的属性，其初始值总是为0。我们还添加了一个名为</p>
+<p>read_odometer()的方法，用于读取汽车的里程表：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, make, model, year</span>):</span></span><br><span class="line">        <span class="string">"""初始化描述汽车的属性"""</span></span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometer_reading = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_descriptive_name</span>(<span class="params">self</span>):</span></span><br><span class="line">            -- * snip * --</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read_odometer</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">"""打印一条指出汽车里程的消息"""</span></span><br><span class="line">    </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"This car has "</span> + <span class="built_in">str</span>(self.odometer_reading) + <span class="string">" miles on it."</span>)</span><br><span class="line">    </span><br><span class="line">my_new_car = Car(<span class="string">'audi'</span>, <span class="string">'a4'</span>, <span class="number">2016</span>)</span><br><span class="line"><span class="built_in">print</span>(my_new_car.get_descriptive_name())</span><br><span class="line">my_new_car.read_odometer() </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="6-3修改属性的值"><a href="#6-3修改属性的值" class="headerlink" title="6.3修改属性的值"></a><strong>6.3修改属性的值</strong></h4><p><em><strong>\1. 直接修改属性的值</strong></em></p>
+<p>要修改属性的值，最简单的方式是通过实例直接访问它。下面的代码直接将里程表读数设置</p>
+<p>为23：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span> </span><br><span class="line"> --*snip*-- </span><br><span class="line"></span><br><span class="line">my_new_car = Car(<span class="string">'audi'</span>, <span class="string">'a4'</span>, <span class="number">2016</span>) </span><br><span class="line"><span class="built_in">print</span>(my_new_car.get_descriptive_name())</span><br><span class="line"></span><br><span class="line">my_new_car.odometer_reading = <span class="number">23</span> </span><br><span class="line">my_new_car.read_odometer() </span><br></pre></td></tr></tbody></table></figure>
+
+<p>我们使用句点表示法来直接访问并设置汽车的属性odometer_reading。这行代码让Python在实例my_new_car中找到属性odometer_reading，并将该属性的值设置为23：</p>
+<p>2016 Audi A4 </p>
+<p>This car has 23 miles on it. </p>
+<p>有时候需要像这样直接访问属性，但其他时候需要编写对属性进行更新的方法。</p>
+<p><em><strong>\2. 通过方法修改属性的值</strong></em></p>
+<p>如果有替你更新属性的方法，将大有裨益。这样，你就无需直接访问属性，而可将值传递给</p>
+<p>一个方法，由它在内部进行更新。</p>
+<p>下面的示例演示了一个名为update_odometer()的方法：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, make, model, year</span>):</span></span><br><span class="line">        <span class="string">"""初始化描述汽车的属性"""</span></span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometer_reading = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_descriptive_name</span>(<span class="params">self</span>):</span></span><br><span class="line">        long_name = <span class="built_in">str</span>(self.year) + <span class="string">' '</span> + self.make + <span class="string">' '</span> + self.model</span><br><span class="line">        <span class="keyword">return</span> long_name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update_odometer</span>(<span class="params">self, mileage</span>):</span></span><br><span class="line">        <span class="string">"""将里程表读数设置为指定的值"""</span></span><br><span class="line">        self.odometer_reading = mileage</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read_odometer</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">"""打印一条指出汽车里程的消息"""</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"This car has "</span> + <span class="built_in">str</span>(self.odometer_reading) + <span class="string">" miles on it."</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">my_new_car = Car(<span class="string">'audi'</span>, <span class="string">'a4'</span>, <span class="number">2016</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(my_new_car.get_descriptive_name())</span><br><span class="line">my_new_car.update_odometer(<span class="number">23</span>)</span><br><span class="line"></span><br><span class="line">my_new_car.read_odometer()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>对Car类所做的修改是在添加了方法update_odometer()。这个方法接受一个里程值，并将其存储到self.odometer_reading中。</p>
+<p>后面调用了update_odometer()，并向它提供了实参23（该实参对应于方法定义中的形参mileage）。它将里程表读数设置为23；而方法read_odometer()打印该读数：</p>
+<p>2016 Audi A4 </p>
+<p>This car has 23 miles on it. </p>
+<h4 id="6-4-继承"><a href="#6-4-继承" class="headerlink" title="6.4 继承"></a>6.4 继承</h4><blockquote>
+<p>编写类时，并非总是要从空白开始。如果你要编写的类是另一个现成类的特殊版本，可使用</p>
+<p>继承。一个类继承另一个类时，它将自动获得另一个类的所有属性和方法；原有的类称为父类，</p>
+<p>而新类称为子类。子类继承了其父类的所有属性和方法，同时还可以定义自己的属性和方法。</p>
+</blockquote>
+<h5 id="6-4-1子类的方法init"><a href="#6-4-1子类的方法init" class="headerlink" title="6.4.1子类的方法init()"></a>6.4.1子类的方法init()</h5><p>创建子类的实例时，Python首先需要完成的任务是给父类的所有属性赋值。为此，子类的方</p>
+<p>法__init__()需要父类施以援手。</p>
+<p>例如，下面来模拟电动汽车。电动汽车是一种特殊的汽车，因此我们可以在前面创建的Car</p>
+<p>类的基础上创建新类ElectricCar，这样我们就只需为电动汽车特有的属性和行为编写代码。</p>
+<p>下面来创建一个简单的ElectricCar类版本，它具备Car类的所有功能：</p>
+<p>electric_car.py</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span></span><br><span class="line">    <span class="string">"""一次模拟汽车的简单尝试"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, make, model, year</span>):</span></span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometer_reading = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_descriptive_name</span>(<span class="params">self</span>):</span></span><br><span class="line"></span><br><span class="line">        long_name = <span class="built_in">str</span>(self.year) + <span class="string">' '</span> + self.make + <span class="string">' '</span> + self.model</span><br><span class="line">        <span class="keyword">return</span> long_name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read_odometer</span>(<span class="params">self</span>):</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"This car has "</span> + <span class="built_in">str</span>(self.odometer_reading) + <span class="string">" miles on it."</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update_odometer</span>(<span class="params">self, mileage</span>):</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> mileage &gt;= self.odometer_reading:</span><br><span class="line">            self.odometer_reading = mileage</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">"You can't roll back an odometer!"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">increment_odometer</span>(<span class="params">self, miles</span>):</span></span><br><span class="line">        self.odometer_reading += miles</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span>(<span class="params">Car</span>):</span></span><br><span class="line">    <span class="string">"""电动汽车的独特之处"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, make, model, year</span>):</span></span><br><span class="line">        <span class="string">"""初始化父类的属性"""</span></span><br><span class="line">        <span class="built_in">super</span>().__init__(make, model, year)</span><br><span class="line">        BenzCar.__init__(self,color,engineSN)</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">my_tesla = ElectricCar(<span class="string">'tesla'</span>, <span class="string">'model s'</span>, <span class="number">2016</span>)</span><br><span class="line"><span class="built_in">print</span>(my_tesla.get_descriptive_name()) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>首先是Car类的代码。创建子类时，父类必须包含在当前文件中，且位于子类前面。</p>
+<p>定义了子类ElectricCar。定义子类时，必须在括号内指定父类的名称。</p>
+<p>方法__init__()接受创建Car实例所需的信息</p>
+<p>super()是一个特殊函数，帮助Python将父类和子类关联起来。这行代码让Python调用ElectricCar的父类的方法__init__()，让ElectricCar实例包含父类的所有属性。</p>
+<p>父类也称为超类（superclass），名称super因此而得名。</p>
+<p>为测试继承是否能够正确地发挥作用，我们尝试创建一辆电动汽车，但提供的信息与创建普</p>
+<p>通汽车时相同。我们创建ElectricCar类的一个实例，并将其存储在变量my_tesla中。这</p>
+<p>行代码调用ElectricCar类中定义的方法__init__()，后者让Python调用父类Car中定义的方法</p>
+<p><strong>init</strong>()。我们提供了实参’tesla’、’model s’和2016。</p>
+<h5 id="6-4-2给子类定义属性和方法"><a href="#6-4-2给子类定义属性和方法" class="headerlink" title="6.4.2给子类定义属性和方法"></a><strong>6.4.2给子类定义属性和方法</strong></h5><p>让一个类继承另一个类后，可添加区分子类和父类所需的新属性和方法。</p>
+<p>下面来添加一个电动汽车<strong>特有</strong>的属性（电瓶），以及一个描述该属性的方法。我们将存储电</p>
+<p>瓶容量，并编写一个打印电瓶描述的方法：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span></span><br><span class="line">    -- * snip * --</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span>(<span class="params">Car</span>):</span></span><br><span class="line">    <span class="string">"""Represent aspects of a car, specific to electric vehicles."""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, make, model, year</span>):</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        电动汽车的独特之处</span></span><br><span class="line"><span class="string">        初始化父类的属性，再初始化电动汽车特有的属性</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="built_in">super</span>().__init__(make, model, year)</span><br><span class="line">        self.battery_size = <span class="number">70</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">describe_battery</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">"""打印一条描述电瓶容量的消息"""</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"This car has a "</span> + <span class="built_in">str</span>(self.battery_size) + <span class="string">"-kWh battery."</span>)</span><br><span class="line"></span><br><span class="line">my_tesla = ElectricCar(<span class="string">'tesla'</span>, <span class="string">'model s'</span>, <span class="number">2016</span>)</span><br><span class="line"><span class="built_in">print</span>(my_tesla.get_descriptive_name())</span><br><span class="line">my_tesla.describe_battery()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>我们添加了新属性self.battery_size，并设置其初始值（如70）。根据ElectricCar 类</p>
+<p>创建的所有实例都将包含这个属性，但所有Car实例都不包含它。在处，我们还添加了一个名</p>
+<p>为describe_battery()的方法，它打印有关电瓶的信息。我们调用这个方法时，将看到一条电动</p>
+<p>汽车特有的描述：</p>
+<p>2016 Tesla Model S </p>
+<p>This car has a 70-kWh battery. </p>
+<p>对于ElectricCar类的特殊化程度没有任何限制。模拟电动汽车时，你可以根据所需的准确</p>
+<p>程度添加任意数量的属性和方法。如果一个属性或方法是任何汽车都有的，而不是电动汽车特有</p>
+<p>的，就应将其加入到Car类而不是ElectricCar类中。这样，使用Car类的人将获得相应的功能，而</p>
+<p>ElectricCar类只包含处理电动汽车特有属性和行为的代码。</p>
+<h5 id="6-4-3重写父类的方法"><a href="#6-4-3重写父类的方法" class="headerlink" title="6.4.3重写父类的方法"></a><strong>6.4.3重写父类的方法</strong></h5><p>对于父类的方法，只要它不符合子类模拟的实物的行为，都可对其进行重写。为此，可在子</p>
+<p>类中定义一个这样的方法，即它与<strong>要重写的父类方法同名</strong>。这样，Python将不会考虑这个父类方法，而只关注你在子类中定义的相应方法。</p>
+<p>假设Car类有一个名为fill_gas_tank()的方法，它对全电动汽车来说毫无意义，因此你可能</p>
+<p>想重写它。下面演示了一种重写方式：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ElectricCar</span>(<span class="params">Car</span>):</span> </span><br><span class="line">    --*snip*-- </span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">fill_gas_tank</span>(<span class="params">self</span>):</span> </span><br><span class="line">    	<span class="string">"""电动汽车没有油箱"""</span> </span><br><span class="line">    	<span class="built_in">print</span>(<span class="string">"This car doesn't need a gas tank!"</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>现在，如果有人对电动汽车调用方法fill_gas_tank()，Python将忽略Car类中的方法</p>
+<p>fill_gas_tank()，转而运行上述代码。使用继承时，可让子类保留从父类那里继承而来的精华，</p>
+<p>并剔除不需要的糟粕。</p>
+<h4 id="6-5-导入类"><a href="#6-5-导入类" class="headerlink" title="6.5 导入类"></a><strong>6.5 导入类</strong></h4><p>随着你不断地给类添加功能，文件可能变得很长，即便你妥善地使用了继承亦如此。为遵循</p>
+<p>Python的总体理念，应让文件尽可能整洁。为在这方面提供帮助，Python允许你将类存储在模块</p>
+<p>中，然后在主程序中导入所需的模块。</p>
+<p>下面来创建一个只包含Car类的模块，将Car类存储在一个名为car.py的模块中。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""一个可用于表示汽车的类"""</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>():</span></span><br><span class="line">    <span class="string">"""一次模拟汽车的简单尝试"""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, make, model, year</span>):</span></span><br><span class="line">        <span class="string">"""初始化描述汽车的属性"""</span></span><br><span class="line">        self.make = make</span><br><span class="line">        self.model = model</span><br><span class="line">        self.year = year</span><br><span class="line">        self.odometer_reading = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_descriptive_name</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">"""返回整洁的描述性名称"""</span></span><br><span class="line">        long_name = <span class="built_in">str</span>(self.year) + <span class="string">' '</span> + self.make + <span class="string">' '</span> + self.model</span><br><span class="line">        <span class="keyword">return</span> long_name.title()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_odometer</span>(<span class="params">self</span>):</span></span><br><span class="line">    <span class="string">"""打印一条消息，指出汽车的里程"""</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"This car has "</span> + <span class="built_in">str</span>(self.odometer_reading) + <span class="string">" miles on it."</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_odometer</span>(<span class="params">self, mileage</span>):</span></span><br><span class="line">    <span class="string">""" </span></span><br><span class="line"><span class="string">    将里程表读数设置为指定的值</span></span><br><span class="line"><span class="string">    拒绝将里程表往回拨</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> mileage &gt;= self.odometer_reading:</span><br><span class="line">        self.odometer_reading = mileage</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"You can't roll back an odometer!"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">increment_odometer</span>(<span class="params">self, miles</span>):</span></span><br><span class="line">        <span class="string">"""将里程表读数增加指定的量"""</span></span><br><span class="line">        self.odometer_reading += miles</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>我们包含了一个模块级文档字符串，对该模块的内容做了简要的描述。你应为自己</p>
+<p>创建的每个模块都编写文档字符串。</p>
+<p>下面来创建另一个文件——my_car.py，在其中导入Car类并创建其实例：</p>
+<p>my_car.py </p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> car <span class="keyword">import</span> Car</span><br><span class="line"></span><br><span class="line">my_new_car = Car(<span class="string">'audi'</span>, <span class="string">'a4'</span>, <span class="number">2016</span>)</span><br><span class="line"><span class="built_in">print</span>(my_new_car.get_descriptive_name())</span><br><span class="line"></span><br><span class="line">my_new_car.odometer_reading = <span class="number">23</span></span><br><span class="line">my_new_car.read_odometer()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>import语句让Python打开模块car，并导入其中的Car类。这样我们就可以使用Car类了。</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>编写函数：<strong>传入半径，计算圆的面积。</strong></p>
+<p>例如：</p>
+<p>function_name(7)</p>
+<p>输出：面积为153.86</p>
+<p><em><strong>参考答案</strong></em></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">circleArea</span>(<span class="params">a</span>):</span></span><br><span class="line">    area = a * a * math.pi</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"面积为%.2f"</span> % area)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">circleArea(<span class="number">7</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>编写函数：<strong>传入参数a和b（a&lt;b），计算a+(a+1)+(a+2)+……+b的值。</strong></p>
+<p>例如：</p>
+<p>function_name(1, 100)</p>
+<p>输出：5050</p>
+<p><em><strong>参考答案</strong></em></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sumCount</span>(<span class="params">a,b</span>):</span></span><br><span class="line">    s=<span class="built_in">sum</span>(<span class="built_in">list</span>(<span class="built_in">range</span>(a,b+<span class="number">1</span>)))</span><br><span class="line">    <span class="comment">#s=sum(range(a,b+1))</span></span><br><span class="line">    <span class="keyword">return</span> s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s1=sumCount(<span class="number">1</span>, <span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p><strong>二选一</strong></p>
+<p><strong>(1)请写一个函数 equals ，该函数参数为任意数量的数字，请在函数中统计出这些参数数字中重复的数字有多少个</strong></p>
+<p>比如 ：</p>
+<p>equals(3, 4, 3, 4, 1, 6, 2)<br>输出为：</p>
+<p>数字 3 出现了 2 次<br>数字 4 出现了 2 次<br>数字 1 出现了 1 次<br>数字 6 出现了 1 次<br>数字 2 出现了 1 次</p>
+<p><em><strong>参考答案</strong></em></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">equals</span>(<span class="params">*numbers</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> numbers:</span><br><span class="line">        <span class="built_in">print</span>(i, <span class="string">'出现的次数为:'</span>, numbers.count(i))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">equals(<span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">6</span>, <span class="number">2</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>(2)编写程序，生成包含1000个0到100之间的随机整数，并统计每个元素的出现次数。</strong></p>
+<p><em><strong>参考答案</strong></em></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">ls = [random.randint(<span class="number">0</span>, <span class="number">100</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000</span>)]</span><br><span class="line">d = <span class="built_in">dict</span>()</span><br><span class="line"><span class="comment">#d = {}</span></span><br><span class="line"><span class="keyword">for</span> element <span class="keyword">in</span> ls:</span><br><span class="line">    d[element] = d.get(element, <span class="number">0</span>)+<span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> d.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"数字{}出现了{}次"</span>.<span class="built_in">format</span>(k, v))</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>编写以下类，并创建Student和CollegeStudent对象进行测试，让子类调用自身和父类的方法。</p>
+<ul>
+<li><p>编写person类，具有以下属性和方法：<br>属性：姓名name，年龄age<br>方法：speak(),打印出当前person对象的姓名和年龄</p>
+</li>
+<li><p>编写Student类继承person类，具有以下属性和方法：<br>属性：姓名name，年龄age，学校school和学号my_id<br>方法：speak(),打印当前Student对象的所有属性信息<br>方法：run(v,times),设置学生速度和时间，输出学生跑步距离</p>
+</li>
+<li><p>编写CollegeStudent类继承Student类，具有以下属性和方法：<br>属性：姓名name，年龄age，学校school，学号my_id和语言language<br>方法：speak(),打印出当前CollegeStudent对象的所有属性信息<br>方法：coding(),使用十秒打印出”I am coding……….”(十个点)<br>参考代码：<br>from time import sleep</p>
+</li>
+</ul>
+<p>class Person():<br>    def <strong>init</strong>(self, name, age):<br>        self.name = name<br>        self.age = age</p>
+<pre><code>def speak(self):
+    print("我是%s,今年%s岁了。" % (self.name, self.age))
+</code></pre>
+<p>class Student(Person):<br>    def <strong>init</strong>(self, name, age, school, id):<br>        super().<strong>init</strong>(name, age)<br>        self.school = school<br>        self.id = id</p>
+<pre><code>def speak(self):
+    print("我是%s,今年%s岁了,我来自%s,学号是%d" % (self.name, self.age, self.school, self.id))
+
+@staticmethod
+def run(v, times):
+    return v * times
+</code></pre>
+<p>class CollegeStudent(Student):<br>    def <strong>init</strong>(self, name, age, school, id, language):<br>        super().<strong>init</strong>(name, age, school, id)<br>        self.language = language</p>
+<pre><code>def speak(self):
+    print("我是%s,今年%s岁了,我来自%s,学号是%d,我会%s" % (self.name, self.age, self.school, self.id, self.language))
+
+def coding(self):
+    print("I am coding", end=" ")
+    for i in range(10):
+        print(".", end="")
+        sleep(1)
+</code></pre>
+<p>x = CollegeStudent(‘Jim’, 18, ‘BlueKing’, 200101, ‘English’)<br>x.speak()<br>x.coding()</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">LeatingVan</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/02/07/python%E7%AC%AC%E4%B8%89%E8%AF%BE/">http://example.com/2022/02/07/python%E7%AC%AC%E4%B8%89%E8%AF%BE/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">LeatingVan</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/02/07/python%E7%AC%AC%E4%BA%8C%E8%AF%BE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python02">
+                        
+                        <span class="card-title">python02</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/02/07/python%E7%AC%AC%E4%B8%80%E8%AF%BE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="python01">
+                        
+                        <span class="card-title">python01</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 丽婷的blog<br />'
+            + '文章作者: Leating Van<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <!-- <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script> -->
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">Leating Van</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "1";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LeatingVan" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1662627418@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1662627418" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1662627418" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":20,"vOffset":0},"dialog":{"enable":true,"text":["星星在天上，而你在我心里(●'◡'●)~","你的脖子真可爱，上面顶个猪脑袋~","doki doki~"]},"mobile":{"show":false,"scale":0.2},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+
+</html>

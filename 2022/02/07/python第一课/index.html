@@ -1,0 +1,1534 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="python01, 丽婷的blog">
+    <meta name="description" content="pythonpython是一种跨平台的、解释型、交互式、面向对象的编程语言。
+1.安装和运行1.1安装官方网站
+1.2运行交互式运行python自带的简单的开发环境IDLE运行2 .变量和数据类型2.1输出函数printprint()函数的">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>python01 | 丽婷的blog</title>
+    <link rel="icon" type="image/png" href="https://github.com/LeatingVan/Image/blob/main/img/202202051736389.jpg?raw=true">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.0.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://github.com/LeatingVan/Image/blob/main/cover/202202061931197.jpg?raw=true);
+       background-repeat:no-repeat;
+       background-size: 100% 100%;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://github.com/LeatingVan/Image/blob/main/img/202202051736389.jpg?raw=true" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">丽婷的blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-castle" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tag" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/navigate" class="waves-effect waves-light">
+      
+      <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
+      
+      <span>快捷导航</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://github.com/LeatingVan/Image/blob/main/img/202202051736389.jpg?raw=true" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">丽婷的blog</div>
+        <div class="logo-desc">
+            
+            星星在天上，而你在我心里(●&#39;◡&#39;●)~
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-castle"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tag" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/navigate" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-location-arrow"></i>
+			
+			快捷导航
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #8d8bf3;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">python01</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/python/" class="post-category">
+                                python
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-02-07
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><p>python是一种跨平台的、解释型、交互式、面向对象的编程语言。</p>
+<h2 id="1-安装和运行"><a href="#1-安装和运行" class="headerlink" title="1.安装和运行"></a>1.安装和运行</h2><h3 id="1-1安装"><a href="#1-1安装" class="headerlink" title="1.1安装"></a>1.1安装</h3><p>官方网站</p>
+<h3 id="1-2运行"><a href="#1-2运行" class="headerlink" title="1.2运行"></a>1.2运行</h3><h5 id="交互式运行"><a href="#交互式运行" class="headerlink" title="交互式运行"></a>交互式运行</h5><h5 id="python自带的简单的开发环境IDLE运行"><a href="#python自带的简单的开发环境IDLE运行" class="headerlink" title="python自带的简单的开发环境IDLE运行"></a>python自带的简单的开发环境IDLE运行</h5><h2 id="2-变量和数据类型"><a href="#2-变量和数据类型" class="headerlink" title="2 .变量和数据类型"></a>2 .变量和数据类型</h2><h3 id="2-1输出函数print"><a href="#2-1输出函数print" class="headerlink" title="2.1输出函数print"></a>2.1输出函数print</h3><p>print()函数的输出内容可以是数字、字符串、含有运算符的表达式</p>
+<p>print()函数可以将内容输出到 显示器 或 文件。</p>
+<p>输出到文件例：</p>
+<p>fp = open(‘D:/test.txt’,’a+’)</p>
+<p>print(‘helloword!’, file=fp)</p>
+<p>fp.close()</p>
+<p>print()函数的输出可换行。</p>
+<h3 id="2-2转义字符"><a href="#2-2转义字符" class="headerlink" title="2.2转义字符"></a>2.2转义字符</h3><p>在需要在字符中使用特殊字符时，python 用反斜杠 *<em>\*</em> 转义字符。</p>
+<p>反斜杠+想要实现的转义功能的首字母</p>
+<p>换行：\n        print(‘hello\nworld’)</p>
+<p>水平制表符：\t      print(‘hello\tworld’)</p>
+<p>退格: \b        print(‘hello\bworld’)</p>
+<p>print(‘http:\\\\baidu.com’)</p>
+<p>print(‘老师说：\‘同学们好\'‘)</p>
+<h3 id="2-3变量"><a href="#2-3变量" class="headerlink" title="2.3变量"></a>2.3变量</h3><p>变量由三部分组成：标识–可用id(obj)获取、类型–可用type(obj)获取和值–可用print()获取。</p>
+<p>例：name = “张三”</p>
+<p>变量之所以称为变量，顾名思义，其量可以改变。</p>
+<p>当多次赋值之后，变量名会指向新的空间。</p>
+<p>例：</p>
+<p>name=’李四’</p>
+<p>name=’张三’</p>
+<p>最终只会输出张三</p>
+<h4 id="变量的命名和使用"><a href="#变量的命名和使用" class="headerlink" title="变量的命名和使用"></a>变量的命名和使用</h4><ul>
+<li>变量名只能包含<strong>字母、数字和下划线</strong>。变量名可以<strong>字母或下划线打头</strong>，但<strong>不能以数字开</strong></li>
+</ul>
+<p><strong>头</strong>，例如，可将变量命名为message_1，但不能将其命名为1_message。 </p>
+<ul>
+<li>变量名不能包含空格，但可使用下划线来分隔其中的单词。例如，变量名greeting_message</li>
+</ul>
+<p>可行，但变量名greeting message会引发错误。</p>
+<ul>
+<li>不要将Python关键字和函数名用作变量名，即不要使用Python保留用于特殊用途的单词，</li>
+</ul>
+<p>如print()</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import keyword</span><br><span class="line">&gt;&gt;&gt; print(keyword.kwlist)</span><br><span class="line">['False', 'None', 'True', '__peg_parser__', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a><strong>注释</strong></h4><p>在Python中，<strong>单行注释</strong>用井号（#）标识。井号后面的内容都会被Python解释器忽略</p>
+<p><strong>多行注释</strong>使用三引号：’ ‘ ‘chgchlf’ ‘ ‘或者“ ” “dchkdryvec” “ “</p>
+<p>编写注释的主要目的是阐述代码要做什么，以及是如何做的。在开发项目期间，你对各个部</p>
+<p>分如何协同工作了如指掌，但过段时间后，有些细节你可能不记得了。通过编写注释，以清</p>
+<p>晰的自然语言对解决方案进行概述，可节省很多时间。</p>
+<p>在程序中添加描述性注释,编写清晰、简洁的注释。</p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062047670.png?raw=true" alt="image-20220116215801486"></p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062048069.png?raw=true" alt="image-20220116111641462"></p>
+<h3 id="2-4数据类型"><a href="#2-4数据类型" class="headerlink" title="2.4数据类型"></a>2.4数据类型</h3><h4 id="布尔型-bool"><a href="#布尔型-bool" class="headerlink" title="布尔型(bool)"></a>布尔型(bool)</h4><p>获取对象的布尔值可用内置函数bool ()</p>
+<p><strong>True，False</strong></p>
+<p>布尔类型可转化为整数：</p>
+<p>True  –  1</p>
+<p>False  –  0</p>
+<p>以下对象的布尔值为 False：</p>
+<p>False、数值0、None、空字符串、空列表、空元组、空字典、空集合</p>
+<h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><p><strong>整数</strong>（int）</p>
+<p>可表示正数、负数、0.</p>
+<p>在Python中，可对整数执行加（+）减（-）乘（*）除（/）运算。</p>
+<p>Python使用两个乘号表示乘方运算，添加括号优先运算</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> + <span class="number">3</span></span><br><span class="line"><span class="number">5</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> - <span class="number">2</span></span><br><span class="line"><span class="number">1</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> * <span class="number">3</span></span><br><span class="line"><span class="number">6</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> / <span class="number">2</span></span><br><span class="line"><span class="number">1.5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> ** <span class="number">2</span></span><br><span class="line"><span class="number">9</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> + <span class="number">3</span>*<span class="number">4</span></span><br><span class="line"><span class="number">14</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">2</span> + <span class="number">3</span>) * <span class="number">4</span></span><br><span class="line"><span class="number">20</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>浮点数</strong>（float）</p>
+<p>Python将带小数点的数字都称为浮点数。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0.1</span> + <span class="number">0.1</span></span><br><span class="line"><span class="number">0.2</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0.2</span> + <span class="number">0.2</span></span><br><span class="line"><span class="number">0.4</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> * <span class="number">0.1</span></span><br><span class="line"><span class="number">0.2</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">2</span> * <span class="number">0.2</span></span><br><span class="line"><span class="number">0.4</span> </span><br><span class="line"><span class="comment">#但需要注意的是，结果包含的小数位数可能是不确定的：</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">0.2</span> + <span class="number">0.1</span></span><br><span class="line"><span class="number">0.30000000000000004</span> </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">3</span> * <span class="number">0.1</span></span><br><span class="line"><span class="number">0.30000000000000004</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">1.1</span>+<span class="number">2.2</span>)<span class="comment">#3.3000000000000003</span></span><br><span class="line"><span class="comment">#解决方案--导入模块decimal</span></span><br><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> Decimal</span><br><span class="line"><span class="built_in">print</span>(Decimal(<span class="string">'1.1'</span>)+Decimal(<span class="string">'2.2'</span>))<span class="comment">#3.3</span></span><br><span class="line"><span class="comment">#二进制的底层问题，不必深究</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><h4 id="str–-gt-”人生苦短，我学python”"><a href="#str–-gt-”人生苦短，我学python”" class="headerlink" title="str–>”人生苦短，我学python”"></a>str–&gt;”人生苦短，我学python”</h4><p>字符串就是一系列字符。在Python中，用<strong>引号</strong>括起的都是字符串，其中的引号可以是单引号，也可以是双引号</p>
+<p><strong>正确地使用单引号和双引号</strong></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message = <span class="string">"One of Python's strengths is its diverse community."</span> </span><br><span class="line"><span class="built_in">print</span>(message) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>撇号位于两个双引号之间，因此Python解释器能够正确地理解这个字符串：</p>
+<p>&gt;&gt;&gt;One of Python’s strengths is its diverse community. </p>
+<p>然而，如果你使用单引号，Python将无法正确地确定字符串的结束位置：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">message = <span class="string">'One of Python'</span>s strengths <span class="keyword">is</span> its diverse community.<span class="string">' </span></span><br><span class="line"><span class="string">print(message) </span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>python中<strong>三引号</strong>可以表示复杂的字符串:</p>
+<ul>
+<li><p>python三引号允许一个字符串跨多行，字符串中可以包含换行符、制表符以及其他特殊字符。</p>
+</li>
+<li><p>三引号的语法是一对连续的单引号或者双引号。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">chat = <span class="string">"""how are you?</span></span><br><span class="line"><span class="string">i'm fine, than you,and you?</span></span><br><span class="line"><span class="string">    me too!"""</span></span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(chat)</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<p><strong>字符串常用方法</strong></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#title()以首字母大写的方式显示每个单词，即将每个单词的首字母都改为大写。</span></span><br><span class="line">name = <span class="string">"ada lovelace"</span> </span><br><span class="line"><span class="built_in">print</span>(name.title()) <span class="comment">#Ada Lovelace</span></span><br><span class="line"></span><br><span class="line">name2 = <span class="string">"Ada Lovelace"</span> </span><br><span class="line"><span class="built_in">print</span>(name2.upper()) <span class="comment">#ADA LOVELACE </span></span><br><span class="line"><span class="built_in">print</span>(name2.lower()) <span class="comment">#ada lovelace </span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(name*<span class="number">3</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>合并（拼接）字符串</strong></p>
+<p>Python使用加号（+）来合并字符串。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">first_name = <span class="string">"ada"</span> </span><br><span class="line">last_name = <span class="string">"lovelace"</span> </span><br><span class="line">full_name = first_name + <span class="string">" "</span> + last_name</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Hello, "</span> + full_name.title() + <span class="string">"!"</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>函数str()</strong></p>
+<p>在字符串中使用整数时，需要显式地指出你希望Python将这个整数用作字符串。为此，可调用函数str()，它让Python将非字符串值表示为字符串：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = 23 </span><br><span class="line">message = "Happy " + str(age) + "rd Birthday!" </span><br><span class="line">print(message) </span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062101132.png?raw=true" alt="image-20220116113544841"></p>
+<p>注意：文字类和小数类无法转换为整数</p>
+<h4 id="input（-函数"><a href="#input（-函数" class="headerlink" title="input（)函数"></a>input（)函数</h4><p>input()函数接收来自用户的输入，输入值的类型为str，使用=对输入的值进行存储</p>
+<h3 id="2-5运算符及其优先级"><a href="#2-5运算符及其优先级" class="headerlink" title="2.5运算符及其优先级"></a>2.5运算符及其优先级</h3><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062101753.png?raw=true" alt="image-20220116211704900"></p>
+<h5 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h5><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102679.png?raw=true" alt="image-20220116211957480"></p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102335.png?raw=true" alt="image-20220116212517749"></p>
+<h5 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h5><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102107.png?raw=true" alt="image-20220116212608901"></p>
+<p><strong>交换：</strong> a,b = b,a</p>
+<h5 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h5><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102636.png?raw=true" alt="image-20220116212937655"></p>
+<p><strong>结果返回布尔值</strong></p>
+<p>注意：”=“ 为赋值运算符，”==“ 为比较运算符</p>
+<p>== 比较的是值</p>
+<p> 比较对象的标识用  is</p>
+<p>打印标识用id()</p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102729.png?raw=true" alt="image-20220116215111903"></p>
+<h5 id="布尔运算符"><a href="#布尔运算符" class="headerlink" title="布尔运算符"></a>布尔运算符</h5><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102382.png?raw=true" alt="image-20220116214923804"></p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102398.png?raw=true" alt="image-20220116214951701"></p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102879.png?raw=true" alt="image-20220116220413858"></p>
+<h5 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h5><p>位与 &amp;       位或 |</p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102848.png?raw=true" alt="image-20220116220936751"></p>
+<h5 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h5><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102652.png?raw=true" alt="image-20220116221619758"></p>
+<p>0 –&gt; 算术运算符  –&gt; 位运算符  –&gt; 比较运算符  –&gt; 布尔运算符  –&gt; 赋值运算符</p>
+<h2 id="3-流程控制"><a href="#3-流程控制" class="headerlink" title="3.流程控制"></a>3.流程控制</h2><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062103865.png?raw=true" alt="image-20220116222445811"></p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102273.png?raw=true" alt="202202062102273.png"></p>
+<h3 id="3-1顺序结构"><a href="#3-1顺序结构" class="headerlink" title="3.1顺序结构"></a>3.1顺序结构</h3><p>程序从上到下顺序地执行代码，中间没有任何的判断和跳转，直到程序结束。</p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102401.png?raw=true" alt="image-20220116222702162"></p>
+<h3 id="3-2选择结构"><a href="#3-2选择结构" class="headerlink" title="3.2选择结构"></a>3.2选择结构</h3><p>程序根据<strong>判断条件的布尔值</strong>选择性地执行部分代码。</p>
+<p>明确地让计算机知道在什么条件下，该做什么。</p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102163.png?raw=true" alt="image-20220116223242324"></p>
+<p><strong>条件测试</strong></p>
+<p>每条if语句的核心都是一个值为True或False的表达式，这种表达式被称为条件测试。Python</p>
+<p>根据条件测试的值为True还是False来决定是否执行if语句中的代码。如果条件测试的值为True，</p>
+<p>Python就执行紧跟在if语句后面的代码；如果为False，Python就忽略这些代码。</p>
+<h4 id="if-语句"><a href="#if-语句" class="headerlink" title="if 语句"></a>if 语句</h4><p>单分支结构—-最简单的if语句只有一个测试和一个操作：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> conditional_test: </span><br><span class="line">    do something </span><br><span class="line"><span class="comment">#如果。。。就。。。</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>在第1行中，可包含任何条件测试，而在紧跟在测试后面的缩进代码块中，可执行任何操作。</p>
+<p>如果条件测试的结果为True，Python就会执行紧跟在if语句后面的代码；否则Python将忽略这些</p>
+<p>代码。</p>
+<p>假设有一个表示某人年龄的变量，而你想知道这个人是否够投票的年龄，可使用如下代码：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">19</span> </span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>: </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"You are old enough to vote!"</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>if-else 语句</strong>（双分支结构）</p>
+<p>经常需要在条件测试通过了时执行一个操作，并在没有通过时执行另一个操作；在这种情况</p>
+<p>下，可使用Python提供的if-else语句。if-else语句块类似于简单的if语句，但其中的else语句</p>
+<p>让你能够指定条件测试未通过时要执行的操作。</p>
+<p>下面的代码在一个人够投票的年龄时显示与前面相同的消息，同时在这个人不够投票的年龄</p>
+<p>时也显示一条消息：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">17</span> </span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>: </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"You are old enough to vote!"</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Have you registered to vote yet?"</span>)</span><br><span class="line"><span class="keyword">else</span>: </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Sorry, you are too young to vote."</span>) </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"Please register to vote as soon as you turn 18!"</span>) </span><br><span class="line"> <span class="comment">#如果。。就。。否则。。。</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>上述代码之所以可行，是因为只存在两种情形：要么够投票的年龄，要么不够。if-else结</p>
+<p>构非常适合用于要让Python执行两种操作之一的情形。在这种简单的if-else结构中，总是会执行</p>
+<p>两个操作中的一个。</p>
+<p><strong>if-elif-else 结构</strong>（多分支结构）</p>
+<p>经常需要检查超过两个的情形，为此可使用Python提供的if-elif-else结构。Python只执行</p>
+<p>if-elif-else结构中的一个代码块，它依次检查每个条件测试，直到遇到通过了的条件测试。测</p>
+<p>试通过后，Python将执行紧跟在它后面的代码，并跳过余下的测试。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a&gt;b:</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"><span class="keyword">elif</span> b&gt;c:</span><br><span class="line">    <span class="built_in">print</span>(b)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(c)</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>使用多个 elif 代码块</strong></p>
+<p>可根据需要使用<strong>任意数量</strong>的elif代码块</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> a&gt;b:</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"><span class="keyword">elif</span> b&gt;c:</span><br><span class="line">    <span class="built_in">print</span>(b)</span><br><span class="line"><span class="keyword">elif</span> d&gt;c:</span><br><span class="line">    </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(c)</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>省略 else 代码块</strong></p>
+<p><strong>Python并不要求if-elif结构后面必须有else代码块。</strong></p>
+<p>忽略else时，每个代码块都仅在通过了相应的测试时才会执行。</p>
+<p>else是一条包罗万象的语句，只要不满足任何if或elif中的条件测试，其中的代码就会执行，</p>
+<p><strong>这可能会引入无效甚至恶意的数据。</strong>如果知道最终要测试的条件，应考虑使用一个elif代码块来</p>
+<p>代替else代码块。这样，你就可以肯定，仅当满足相应的条件时，你的代码才会执行。</p>
+<h4 id="嵌套if"><a href="#嵌套if" class="headerlink" title="嵌套if"></a>嵌套if</h4><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102502.png?raw=true" alt="image-20220117111136471"></p>
+<p>例：在某商城购物，若是会员，购物&gt;=200打八折，购物&gt;=100打九折，购物&lt;100不打折</p>
+<p>非会员购物&gt;=200打九折，否则不打折。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">answer = input('您是会员吗？y/n')</span><br><span class="line">money = float(input('请输入您的购物金额：'))</span><br><span class="line">if answer=='y': #会员</span><br><span class="line">    if money &gt;= 200:</span><br><span class="line">        print('打八折，消费金额为：',0.8*money)</span><br><span class="line">    elif money &gt;= 100:</span><br><span class="line">        print('打九折，消费金额为：', 0.9 * money)</span><br><span class="line">    else:</span><br><span class="line">        print('不打折，消费金额为：', money)</span><br><span class="line">else: #非会员</span><br><span class="line">	if money &gt;= 200:</span><br><span class="line">		print('打九五折，消费金额为：', 0.95 * money)</span><br><span class="line">	else:</span><br><span class="line">    	print('不打折，消费金额为：', money)</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="pass语句"><a href="#pass语句" class="headerlink" title="pass语句"></a>pass语句</h4><p>语句什么都不做，只是一个占位符。当没想好某一块代码怎么写时，写个pass先占个位</p>
+<ul>
+<li>if语句的条件执行体</li>
+<li>for-in语句的循环体</li>
+<li>定义函数时的函数体</li>
+</ul>
+<h3 id="3-3循环结构"><a href="#3-3循环结构" class="headerlink" title="3.3循环结构"></a>3.3循环结构</h3><h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a><strong>for</strong>循环</h4><p>需要对列表中的<strong>每个元素都执行相同的操作时</strong>（遍历），可使用Python中的for循环。</p>
+<ul>
+<li><p>语法结构</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for  自定义的变量  in 可迭代对象：</span><br><span class="line">	循环体</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<p>我们可以分别获取名单中的每个名字，但这种做法会导致多个问题。例如，如果名单很长，将包含大量重复的代码。另外，每当名单的长度发生变化时，都必须修改代码。通过使用for循环，可让Python</p>
+<p>去处理这些问题。</p>
+<p>下面使用for循环来打印名单中的所有名字：</p>
+<p>magicians.py </p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">magicians = [<span class="string">'alice'</span>, <span class="string">'david'</span>, <span class="string">'carolina'</span>] </span><br><span class="line"><span class="keyword">for</span> magician <span class="keyword">in</span> magicians: </span><br><span class="line">    <span class="built_in">print</span>(magician) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>对列表中的每个元素，都将执行循环指定的步骤，而不管列表包含多少个元素。</p>
+<p>用for in循环打印1-100的偶数和</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sum = 0 #用于存储偶数和</span><br><span class="line">for item in range(1,101):</span><br><span class="line">    if item %2 == 0:</span><br><span class="line">    	#print(item)</span><br><span class="line">        sum+=item</span><br><span class="line">        </span><br><span class="line">print('1-100之间的偶数为：', sum)</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="内置函数-range"><a href="#内置函数-range" class="headerlink" title="内置函数 range()"></a><strong>内置函数 range()</strong></h4><p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102023.png?raw=true" alt="image-20220117113153605"></p>
+<p>Python函数range()让你能够轻松地生成一系列的数字。例如，可以像下面这样使用函数</p>
+<p>range()来打印一系列的数字：</p>
+<p>numbers.py </p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">5</span>): </span><br><span class="line">    <span class="built_in">print</span>(value) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>上述代码好像应该打印数字1~5，但实际上它不会打印数字5：</p>
+<p>1 </p>
+<p>2 </p>
+<p>3 </p>
+<p>4 </p>
+<p>在这个示例中，range()只是打印数字1~4，这是你在编程语言中经常看到的差一行为的结果。</p>
+<p>函数range()让Python从你指定的第一个值开始数，并在到达你指定的第二个值后停止，因此输出</p>
+<p>不包含第二个值（这里为5）。—-左闭右开</p>
+<p>要打印数字1~5，需要使用range(1,6)：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">6</span>): </span><br><span class="line">	<span class="built_in">print</span>(value) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>使用函数range()时，还可<strong>指定步长</strong>。例如，下面的代码打印1~10内的偶数：</p>
+<p>even_numbers.py </p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">11</span>,<span class="number">2</span>): </span><br><span class="line">	<span class="built_in">print</span>(value) </span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>使用 range()创建数字列表</strong></p>
+<p>要创建数字列表，可使用函数**list()**将range()的结果直接转换为列表。如果将range()作为</p>
+<p>list()的参数，输出将为一个数字列表。</p>
+<p>在前一节的示例中，我们打印了一系列数字。要将这些数字转换为一个列表，可使用list()：</p>
+<p>numbers = list(range(1,6)) </p>
+<p>print(numbers) </p>
+<p>结果如下：</p>
+<p>[1, 2, 3, 4, 5] </p>
+<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202062102935.png?raw=true" alt="image-20220117113322639"></p>
+<h4 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a><strong>while</strong>循环</h4><p>语法结构：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> 条件表达式：</span><br><span class="line">	条件执行体</span><br></pre></td></tr></tbody></table></figure>
+
+<p>for循环用于针对集合中的每个元素都一个代码块，而while循环不断地运行，直到指定的条件不满足为止。</p>
+<p>你可以使用while循环来数数，例如，下面的while循环从1数到5：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span> </span><br><span class="line"><span class="keyword">while</span> a &lt;= <span class="number">5</span>: </span><br><span class="line">    <span class="built_in">print</span>(a) </span><br><span class="line">    a += <span class="number">1</span> </span><br></pre></td></tr></tbody></table></figure>
+
+<p>1 </p>
+<p>2 </p>
+<p>3 </p>
+<p>4 </p>
+<p>5 </p>
+<h4 id="使用-break-退出循环"><a href="#使用-break-退出循环" class="headerlink" title="使用 break 退出循环"></a><strong>使用 break 退出循环</strong></h4><p>要立即退出while循环，不再运行循环中余下的代码，也不管条件测试的结果如何，可使用break语句。</p>
+<p>例如，来看一个让用户指出他到过哪些地方的程序。在这个程序中，我们可以在用户输入</p>
+<p>‘quit’后使用break语句立即退出while循环：</p>
+<p>cities.py </p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">prompt = <span class="string">"\nPlease enter the name of a city you have visited:"</span> </span><br><span class="line">prompt += <span class="string">"\n(Enter 'quit' when you are finished.) "</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>: </span><br><span class="line">	city = <span class="built_in">input</span>(prompt) </span><br><span class="line">	<span class="keyword">if</span> city == <span class="string">'quit'</span>: </span><br><span class="line">		<span class="keyword">break</span> </span><br><span class="line">	<span class="keyword">else</span>: </span><br><span class="line">		<span class="built_in">print</span>(<span class="string">"I'd love to go to "</span> + city.title() + <span class="string">"!"</span>) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>以while True打头的循环将不断运行，直到遇到break语句。这个程序中的循环不断</p>
+<p>输入用户到过的城市的名字，<strong>直到他输入’quit’为止。</strong>用户输入’quit’后，将执行break语句，导</p>
+<p>致Python退出循环。</p>
+<h4 id="在循环中使用-continue"><a href="#在循环中使用-continue" class="headerlink" title="在循环中使用 continue"></a><strong>在循环中使用 continue</strong></h4><p>作用：用于结束当前的循环，进入下一次循环，通常与分支结构中的if一起使用。</p>
+<p>要返回到循环开头，并根据条件测试结果决定是否继续执行循环，可使用continue语句，它</p>
+<p>不像break语句那样不再执行余下的代码并退出整个循环。例如，来看一个从1数到10，但只打印</p>
+<p>其中奇数的循环：</p>
+<p>counting.py </p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">current_number = <span class="number">0</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> current_number &lt; <span class="number">10</span>: </span><br><span class="line">	current_number += <span class="number">1</span> </span><br><span class="line">	<span class="keyword">if</span> current_number % <span class="number">2</span> == <span class="number">0</span>: </span><br><span class="line">        <span class="keyword">continue</span> </span><br><span class="line">	<span class="built_in">print</span>(current_number) </span><br></pre></td></tr></tbody></table></figure>
+
+<p>我们首先将current_number设置成了0，由于它小于10，Python进入while循环。进入循环后，</p>
+<p>我们以步长1的方式往上数，因此current_number为1。接下来，if语句检查current_number</p>
+<p>与2的求模运算结果。如果结果为0（意味着current_number可被2整除），就执行continue语句，</p>
+<p>让Python忽略余下的代码，并返回到循环的开头。如果当前的数字不能被2整除，就执行循环中</p>
+<p>余下的代码，Python将这个数字打印出来：</p>
+<p>1 </p>
+<p>3 </p>
+<p>5 </p>
+<p>7 </p>
+<p>9 </p>
+<h4 id="嵌套循环"><a href="#嵌套循环" class="headerlink" title="嵌套循环"></a>嵌套循环</h4><p>循环结构中又嵌套了另外的完整的循环结构，其中内层循环作为外层循环的执行体。</p>
+<p><em><strong>输出一个三行四列的矩形：</strong></em></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1,4):</span><br><span class="line">    for j in range(1,5):</span><br><span class="line">        print("*",end='\t') #不换行输出</span><br><span class="line">    print()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>#看调试过程，明白嵌套循环的过程</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>某市的水费缴费采用阶梯收费方式<br>其用水量x(吨)对应的水费y(元)函数关系如下</p>
+<pre><code>        |---   0   ,x&lt;0  
+        |
+        |
+y=f(x)= |    4x+1
+        |---—————— , 0&lt;=x&lt;=15 
+        |      3        
+        |
+        |---2.5x-10.5 , x&gt;15
+</code></pre>
+<p>若小明家本月用水13.8吨,用一条输出语句输出小明家的水费</p>
+<p>答案略</p>
+<h4 id="2-for-in练习题-—-100-999的水仙花数"><a href="#2-for-in练习题-—-100-999的水仙花数" class="headerlink" title="2 for in练习题 —-100~999的水仙花数"></a>2 for in练习题 —-100~999的水仙花数</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">153 = 3*3*3 + 5*5*5 + 1*1*1</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for item in range(100,1000):</span><br><span class="line">    ge=item%10</span><br><span class="line">    shi=item//10%10</span><br><span class="line">    bai=item//100</span><br><span class="line">    if ge**3 + shi**3 +bai**3 == item:</span><br><span class="line">        print(item)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>答案：</p>
+<p>153<br>370<br>371<br>407</p>
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>循环语句，打印出如下图形：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">* ################## *</span><br><span class="line">** ################ **</span><br><span class="line">*** ############## ***</span><br><span class="line">**** ############ ****</span><br><span class="line">***** ########## *****</span><br><span class="line">****** ######## ******</span><br><span class="line">******* ###### *******</span><br><span class="line">******** #### ********</span><br><span class="line">********* ## *********</span><br><span class="line">********* ## *********</span><br><span class="line">******** #### ********</span><br><span class="line">******* ###### *******</span><br><span class="line">****** ######## ******</span><br><span class="line">***** ########## *****</span><br><span class="line">**** ############ ****</span><br><span class="line">*** ############## ***</span><br><span class="line">** ################ **</span><br><span class="line">* ################## *</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<p>参考：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">    s = <span class="string">"*"</span>*i + <span class="string">" "</span> + <span class="string">"#"</span>*<span class="number">2</span>*(<span class="number">10</span>-i) + <span class="string">" "</span> + <span class="string">"*"</span>*i</span><br><span class="line">    <span class="built_in">print</span>(s)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">    s = <span class="string">"*"</span>*(<span class="number">10</span>-i) + <span class="string">" "</span> + <span class="string">"#"</span>*<span class="number">2</span>*i + <span class="string">" "</span> + <span class="string">"*"</span>*(<span class="number">10</span>-i)</span><br><span class="line">    <span class="built_in">print</span>(s)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"*"</span>*i,<span class="string">"#"</span>*(<span class="number">10</span>-i)*<span class="number">2</span>,<span class="string">"*"</span>*i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">9</span>,<span class="number">0</span>,-<span class="number">1</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"*"</span>*i,<span class="string">"#"</span>*(<span class="number">10</span>-i)*<span class="number">2</span>,<span class="string">"*"</span>*i)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>while练习题：求1-100的偶数和：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#1、初始化变量</span><br><span class="line">a = 1</span><br><span class="line">sum = 0</span><br><span class="line">#2、条件判断</span><br><span class="line">while a&lt;=100:</span><br><span class="line">    if a%2 == 0: #3、条件执行体</span><br><span class="line">        sum += a</span><br><span class="line">    a+=1 #4、改变变量</span><br><span class="line">print('1-100之间的偶数为：', sum)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>答案：2550</p>
+<p>思考：求1-100的奇数和？</p>
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p><strong>让用户选择何时退出</strong></p>
+<p>可使用while循环让程序，在用户愿意时退出，现在有一个程序，会返回用户输入的语句</p>
+<p>定义一个退出值“quit”，只要用户输入的不是这个值，程序就接着运行(打印用户输入的话)，请补充剩下的代码片段</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">prompt = <span class="string">"\nTell me something, and I will repeat it back to you:"</span> </span><br><span class="line">prompt += <span class="string">"\nEnter 'quit' to end the program. "</span> </span><br><span class="line">message = <span class="string">""</span> </span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>参考：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">prompt = <span class="string">"\nTell me something, and I will repeat it back to you:"</span> </span><br><span class="line">prompt += <span class="string">"\nEnter 'quit' to end the program. "</span> </span><br><span class="line">message = <span class="string">""</span>  </span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>: </span><br><span class="line">	message = <span class="built_in">input</span>(prompt) </span><br><span class="line">	<span class="keyword">if</span> message == <span class="string">'quit'</span>: </span><br><span class="line">		<span class="keyword">break</span> </span><br><span class="line">	<span class="keyword">else</span>: </span><br><span class="line">		<span class="built_in">print</span>(message) </span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="6-利用嵌套循环打印九九乘法表"><a href="#6-利用嵌套循环打印九九乘法表" class="headerlink" title="6 利用嵌套循环打印九九乘法表"></a>6 利用嵌套循环打印九九乘法表</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1,10):</span><br><span class="line">    for j in range(1,i+1):</span><br><span class="line">        print(i,'*',j,'=',i*j,end='\t')</span><br><span class="line">    print()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>1 * 1 = 1<br>2 * 1 = 2    2 * 2 = 4<br>3 * 1 = 3    3 * 2 = 6    3 * 3 = 9<br>4 * 1 = 4    4 * 2 = 8    4 * 3 = 12    4 * 4 = 16<br>5 * 1 = 5    5 * 2 = 10    5 * 3 = 15    5 * 4 = 20    5 * 5 = 25<br>6 * 1 = 6    6 * 2 = 12    6 * 3 = 18    6 * 4 = 24    6 * 5 = 30    6 * 6 = 36<br>7 * 1 = 7    7 * 2 = 14    7 * 3 = 21    7 * 4 = 28    7 * 5 = 35    7 * 6 = 42    7 * 7 = 49<br>8 * 1 = 8    8 * 2 = 16    8 * 3 = 24    8 * 4 = 32    8 * 5 = 40    8 * 6 = 48    8 * 7 = 56    8 * 8 = 64<br>9 * 1 = 9    9 * 2 = 18    9 * 3 = 27    9 * 4 = 36    9 * 5 = 45    9 * 6 = 54    9 * 7 = 63    9 * 8 = 72    9 * 9 = 81    </p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">LeatingVan</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2022/02/07/python%E7%AC%AC%E4%B8%80%E8%AF%BE/">http://example.com/2022/02/07/python%E7%AC%AC%E4%B8%80%E8%AF%BE/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">LeatingVan</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/02/07/python%E7%AC%AC%E4%B8%89%E8%AF%BE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="python函数与面向对象">
+                        
+                        <span class="card-title">python函数与面向对象</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/python/" class="post-category">
+                                    python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/02/07/markdown%E8%AF%AD%E6%B3%95/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="markdown语法">
+                        
+                        <span class="card-title">markdown语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
+                            <a href="/categories/markdown/" class="post-category">
+                                    markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 丽婷的blog<br />'
+            + '文章作者: Leating Van<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <!-- <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script> -->
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">Leating Van</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "1";
+                        var startDate = "1";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/LeatingVan" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1662627418@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1662627418" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1662627418" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+    
+    <script type="text/javascript">var OriginTitile=document.title,st;document.addEventListener("visibilitychange",function(){document.hidden?(document.title="看不见我🙈~看不见我🙈~",clearTimeout(st)):(document.title="(๑•̀ㅂ•́) ✧被发现了～",st=setTimeout(function(){document.title=OriginTitile},3e3))})</script>
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"superSample":2,"width":200,"height":400,"position":"right","hOffset":20,"vOffset":0},"dialog":{"enable":true,"text":["星星在天上，而你在我心里(●'◡'●)~","你的脖子真可爱，上面顶个猪脑袋~","doki doki~"]},"mobile":{"show":false,"scale":0.2},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false});</script></body>
+
+</html>
