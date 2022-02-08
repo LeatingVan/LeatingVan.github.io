@@ -69,7 +69,7 @@
     
     <a href="/" class="waves-effect waves-light">
       
-      <i class="fas fa-castle" style="zoom: 0.6;"></i>
+      <i class="fas fa-magic" style="zoom: 0.6;"></i>
       
       <span>首页</span>
     </a>
@@ -87,6 +87,15 @@
       <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
     </a>
     <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-paper-plane" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>时轴</span>
+        </a>
+      </li>
       
       <li>
         <a href="/categories">
@@ -160,7 +169,7 @@
 	  
 		<a href="/" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-castle"></i>
+			    <i class="fa-fw fas fa-magic"></i>
 			
 			首页
 		</a>
@@ -177,6 +186,16 @@
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
 		</a>
             <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-paper-plane" style="position: absolute;left:50px" ></i>
+			      
+		          <span>时轴</span>
+                  </a>
+                </li>
               
                 <li>
 
@@ -399,13 +418,13 @@
                             <a href="https://it-ebooks.info/" class="link-3" target="_blank">IT ebooks</a>
                         </li>
                         <li>
-                            <a href="https://github.com/justjavac/free-programming-books-zh_CN" class="link-3" target="_blank">免费计算机书籍</a>
+                            <a href="https://github.com/justjavac/free-programming-books-zh_CN" class="link-3" target="_blank">计算机书籍</a>
                         </li>
                         <li>
                             <a href="https://tool.oschina.net/" class="link-3" target="_blank">在线工具</a>
                         </li>
                         <li>
-                            <a href="https://www.iloveimg.com/" class="link-3" target="_blank">图像文件在线编辑</a>
+                            <a href="https://www.iloveimg.com/" class="link-3" target="_blank">图像在线编辑</a>
                         </li>
                         <li>
                             <a href="https://wallhaven.cc/" class="link-3" target="_blank">超清壁纸</a>
@@ -427,7 +446,7 @@
             </div>
             <div class="col s12 m6 l4 friend-div" data-aos="zoom-in-up">
                 <div class="card">
-                    <div class="jj-list-tit">视频</div>
+                    <div class="jj-list-tit">视频 · 课堂</div>
                     <ul class="jj-list-con">
                         <li>
                             <a href="https://www.bilibili.com/" class="link-3" target="_blank">哔哩哔哩</a>
@@ -505,7 +524,7 @@
                             <a href="https://ac.scmor.com/" class="link-3" target="_blank">谷歌镜像</a>
                         </li>
                         <li>
-                            <a href="https://loading.io/" class="link-3" target="_blank">制作css,gif...</a>
+                            <a href="https://loading.io/" class="link-3" target="_blank">css,gif...</a>
                         </li>
                         <li>
                             <a href="https://tinypng.com/" class="link-3" target="_blank">在线压缩</a>
@@ -561,7 +580,7 @@
                 timer = setInterval(function () {
                     // [0-9)
                     $("body").css("background-image",
-                        "url(g");
+                        "url(t");
                 }, 5000);
             }
             window.onload = backgroundImgRandom;
@@ -628,8 +647,8 @@
         left: -1px;
         top: 0;
         z-index: 9999;
-        background: #FFF;
-        border: 1px solid #ccc;
+        background: rgb(12, 10, 10);
+        border: 1px solid rgb(22, 20, 20);
         border-top: none;
         overflow: hidden
     }
@@ -645,7 +664,7 @@
 
     .Select-box li:hover {
         background: #3385ff;
-        color: #FFF
+        color: rgb(19, 16, 16)
     }
 
     .Select-box .this_s {
@@ -653,7 +672,7 @@
     }
 
     .Select-box .this_s:hover {
-        background: #FFF;
+        background: rgb(10, 9, 9);
         color: #317ef3
     }
 
@@ -935,6 +954,9 @@
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">28.1k</span>
+            
             
             
                 
@@ -967,8 +989,8 @@
                         var years = days * 365;
                         var today = new Date();
                         var startYear = "2022";
-                        var startMonth = "1";
-                        var startDate = "1";
+                        var startMonth = "2";
+                        var startDate = "7";
                         var startHour = "0";
                         var startMinute = "0";
                         var startSecond = "0";
