@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mysql基础, 丽婷的blog">
-    <meta name="description" content="MySQL 基础学习一、基本了解1.1 数据库的好处1.持久化数据到本地
-2.可以实现结构化查询，方便管理
-1.2 数据库相关概念DB: 数据库，保存一组有组织的数据的容器 
-DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数">
+    <meta name="keywords" content="flask--web表单, 丽婷的blog">
+    <meta name="description" content="Flask02Web表单在templates文件夹下面新建一个form.html
+12345678910111213141516&amp;lt;!--form表格代码--&amp;gt;&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html lang=">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mysql基础 | 丽婷的blog</title>
+    <title>flask--web表单 | 丽婷的blog</title>
     <link rel="icon" type="image/png" href="https://github.com/LeatingVan/Image/blob/main/img/202202051736389.jpg?raw=true">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -325,12 +323,12 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mysql基础</h1>
+                    <h1 class="description center-align post-title">flask--web表单</h1>
                 </div>
             </div>
         </div>
@@ -446,8 +444,8 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/mysql/">
-                                <span class="chip bg-color">mysql</span>
+                            <a href="/tags/flask/">
+                                <span class="chip bg-color">flask</span>
                             </a>
                         
                     </div>
@@ -458,8 +456,8 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/MYSQL/" class="post-category">
-                                MYSQL
+                            <a href="/categories/flask/" class="post-category">
+                                flask
                             </a>
                         
                     </div>
@@ -471,7 +469,7 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-07
+                    2022-02-19
                 </div>
                 
 
@@ -480,14 +478,14 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    673
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -502,49 +500,146 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="MySQL-基础学习"><a href="#MySQL-基础学习" class="headerlink" title="MySQL 基础学习"></a>MySQL 基础学习</h1><h2 id="一、基本了解"><a href="#一、基本了解" class="headerlink" title="一、基本了解"></a>一、基本了解</h2><h3 id="1-1-数据库的好处"><a href="#1-1-数据库的好处" class="headerlink" title="1.1 数据库的好处"></a>1.1 数据库的好处</h3><p>1.持久化数据到本地</p>
-<p>2.可以实现结构化查询，方便管理</p>
-<h3 id="1-2-数据库相关概念"><a href="#1-2-数据库相关概念" class="headerlink" title="1.2 数据库相关概念"></a>1.2 数据库相关概念</h3><p>DB: 数据库，保存一组有组织的数据的容器 </p>
-<p>DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数据 </p>
-<p>SQL: 结构化查询语言，用于DBMS通信的语言</p>
-<h3 id="1-3-MYSQL的启动和停止"><a href="#1-3-MYSQL的启动和停止" class="headerlink" title="1.3 MYSQL的启动和停止"></a>1.3 MYSQL的启动和停止</h3><p>1.此计算机——管理——服务和应用程序——服务——MySQL 打开后可无脑操作</p>
-<ol start="2">
-<li>cmd——以管理员身份打开——输入命令net stop mysql56(自己起的名字)可停止运行 输入net start mysql56 可重新启动运行 登入之前必须保证是启动状态……..</li>
-</ol>
-<h3 id="1-4-MYSQL服务端的登录和退出"><a href="#1-4-MYSQL服务端的登录和退出" class="headerlink" title="1.4 MYSQL服务端的登录和退出"></a>1.4 MYSQL服务端的登录和退出</h3><ol>
-<li><p>在黑色的MySQL comand line client输入密码即可进入（适用root用户） </p>
-</li>
-<li><p>cmd上——输入：mysql -h localhost -P3306 -u root -p 3306是端口默认值 输入exit来退出 cmd输入</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></tbody></table></figure>
+                <h1 id="Flask02"><a href="#Flask02" class="headerlink" title="Flask02"></a>Flask02</h1><h3 id="Web表单"><a href="#Web表单" class="headerlink" title="Web表单"></a>Web表单</h3><p>在templates文件夹下面新建一个form.html</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--form表格代码--&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>表格<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>学号<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"account"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码<span class="tag">&lt;/<span class="name">label</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"提交"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>mysql代表客户端命令，-u后面跟连接的数据库用户，-p表示需要输入密码。</p>
-<h3 id="1-5配置环境变量"><a href="#1-5配置环境变量" class="headerlink" title="1.5配置环境变量"></a>1.5配置环境变量</h3><p>打开文件安装目录——找到bin——复制粘贴路径——系统变量里添加</p>
-<h2 id="二、MySQL常用命令"><a href="#二、MySQL常用命令" class="headerlink" title="二、MySQL常用命令"></a>二、MySQL常用命令</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases; #列出数据库列表</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1.登录，需要get和post,判断用get还是post</span></span><br><span class="line"><span class="comment"># 2.获取请求参数</span></span><br><span class="line"><span class="comment"># 3.获取密码，账号</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/form'</span>, methods=[<span class="string">'POST'</span>, <span class="string">'GET'</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">form</span>():</span></span><br><span class="line">    <span class="comment"># request请求对象-&gt;获取数据</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        <span class="comment"># 获取请求参数</span></span><br><span class="line">        username = request.form.get(<span class="string">'username'</span>)</span><br><span class="line">        account = request.form.get(<span class="string">'account'</span>)</span><br><span class="line">        password = request.form.get(<span class="string">'password'</span>)</span><br><span class="line">        <span class="built_in">print</span>(username + <span class="string">'----'</span> + <span class="built_in">str</span>(account) + <span class="string">'----'</span> + <span class="built_in">str</span>(password))</span><br><span class="line">        <span class="keyword">return</span> render_template(<span class="string">'form.html'</span>, username=username, account=account, password=password)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'form.html'</span>)</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">use 数据库名; #选择要操作的数据库，使用该命令后所有mysql命令都只针对该数据库。</span><br><span class="line">Database changed</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="SQLAlchemy拓展"><a href="#SQLAlchemy拓展" class="headerlink" title="SQLAlchemy拓展"></a>SQLAlchemy拓展</h3><p>无需写具体的SQL语句，框架通过映射将sql代码实现</p>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> (  ),(  ),(  ) <span class="keyword">from</span> (<span class="keyword">user</span>) <span class="keyword">where</span> ( ) <span class="operator">=</span> ( );</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> xxxxx <span class="keyword">where</span> xxxx;</span><br><span class="line"></span><br><span class="line">update <span class="keyword">set</span> ( ) <span class="keyword">from</span> ( );</span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> tb_name <span class="keyword">values</span> (value1,value2,value3,...);</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables; # 显示指定数据库的所有表，使用前需要use +（数据库名）来选择操作</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables from 数据库名; 在use了某个库之后查看另一个库</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database 数据库名; # 创建数据库</span><br><span class="line">drop database 数据库名; # 删除数据库</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>安装flask-sqlalchemy，PyMysql</strong></p>
+<p>除了在cmd使用pip安装，还可以使用pycharm<br>在搜索框搜索插件名称，安装</p>
+<h4 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request, flash</span><br><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#配置路径，//账号密码@127.0.0.1:3306/数据库名称</span></span><br><span class="line">app.config[<span class="string">'SQLALCHEMY_DATABASE_URI'</span>] = <span class="string">'mysql+pymysql://root:whh666?@127.0.0.1:3306/jf2020'</span></span><br><span class="line"></span><br><span class="line">app.config[<span class="string">'SQLALCHEMY_TRACK_MODIFICATIONS'</span>] = <span class="literal">False</span></span><br><span class="line">db = SQLAlchemy(app)</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create table 列表名(name type); # 创建数据表 字符串用varchar表示</span><br><span class="line">drop table 列表名; # 删除删除数据表</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="创建模型"><a href="#创建模型" class="headerlink" title="创建模型"></a>创建模型</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span>(<span class="params">db.Model</span>):</span></span><br><span class="line">    <span class="comment"># 定义表和字段</span></span><br><span class="line">    __tablename__ = <span class="string">'user'</span></span><br><span class="line">    <span class="comment"># 定义字段</span></span><br><span class="line">    <span class="built_in">id</span> = db.Column(db.<span class="built_in">int</span>(<span class="number">11</span>), primary_key=<span class="literal">True</span>)</span><br><span class="line">    name = db.Column(db.String(<span class="number">100</span>))</span><br><span class="line">    account = db.Column(db.String(<span class="number">32</span>))</span><br><span class="line">    password = db.Column(db.String(<span class="number">32</span>))</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into 列表名</span><br><span class="line">(title, author, date)</span><br><span class="line">values</span><br><span class="line">("学习MySQL", "菜鸟教程", NOW());</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="常用的SQLAlchemy字段类型"><a href="#常用的SQLAlchemy字段类型" class="headerlink" title="常用的SQLAlchemy字段类型"></a>常用的SQLAlchemy字段类型</h5><table>
+<thead>
+<tr>
+<th>类型名</th>
+<th>python中类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Integer</td>
+<td>int</td>
+<td>普通整数，一般是32位</td>
+</tr>
+<tr>
+<td>SmallInteger</td>
+<td>int</td>
+<td>取值范围小的整数，一般是16位</td>
+</tr>
+<tr>
+<td>BigInteger</td>
+<td>int或long</td>
+<td>不限制精度的整数</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>float</td>
+<td>浮点数</td>
+</tr>
+<tr>
+<td>Numeric</td>
+<td>decimal.Decimal</td>
+<td>普通整数，一般是32位</td>
+</tr>
+<tr>
+<td>String</td>
+<td>str</td>
+<td>变长字符串</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>str</td>
+<td>变长字符串，对较长或不限长度的字符串做了优化</td>
+</tr>
+<tr>
+<td>Unicode</td>
+<td>unicode</td>
+<td>变长Unicode字符串</td>
+</tr>
+<tr>
+<td>UnicodeText</td>
+<td>unicode</td>
+<td>变长Unicode字符串，对较长或不限长度的字符串做了优化</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>bool</td>
+<td>布尔值</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>datetime.date</td>
+<td>时间</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>datetime.datetime</td>
+<td>日期和时间</td>
+</tr>
+<tr>
+<td>LargeBinary</td>
+<td>str</td>
+<td>二进制文件</td>
+</tr>
+</tbody></table>
+<h5 id="常用的SQLAlchemy属性选项"><a href="#常用的SQLAlchemy属性选项" class="headerlink" title="常用的SQLAlchemy属性选项"></a>常用的SQLAlchemy属性选项</h5><table>
+<thead>
+<tr>
+<th>选项名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>primary_key</td>
+<td>如果为True，代表表的主键</td>
+</tr>
+<tr>
+<td>unique</td>
+<td>如果为True，代表这列不允许出现重复的值</td>
+</tr>
+<tr>
+<td>index</td>
+<td>如果为True，为这列创建索引，提高查询效率</td>
+</tr>
+<tr>
+<td>nullable</td>
+<td>如果为True，允许有空值，如果为False，不允许有空值</td>
+</tr>
+<tr>
+<td>default</td>
+<td>为这列定义默认值</td>
+</tr>
+</tbody></table>
+<h4 id="操作数据"><a href="#操作数据" class="headerlink" title="操作数据"></a>操作数据</h4><h5 id="获取"><a href="#获取" class="headerlink" title="获取"></a>获取</h5><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># first()返回查询到的第一个对象</span></span><br><span class="line">User.query.first()</span><br><span class="line"></span><br><span class="line"><span class="comment"># all()返回查询到的所有对象</span></span><br><span class="line">User.query.<span class="built_in">all</span>()</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select * from 列表名; # 查询读取列表中的数据</span><br><span class="line">select * from 列表名 where id=1;#有条件的从表中查询读取数据</span><br><span class="line">select * from 列表名 where runoob_author like "%com"; #在列表中查询表头对应有某字段的数</span><br><span class="line">据</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/users'</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getUser</span>():</span></span><br><span class="line">    users = User.query.<span class="built_in">all</span>()</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'getdata.html'</span>, staffs=users)</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update 列表名 set title="xxx"where id=3; # 更新修改列表中的数据</span><br></pre></td></tr></tbody></table></figure>
 
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from 列表名 where id=3; #删除列表中的数据</span><br></pre></td></tr></tbody></table></figure>
 
-<p>表具有一些特性，这些特性定义了数据在表中如何存储，类似java中 “类” 的设计。</p>
-<p>表由列组成，我们也称为字段。所有表都是由一个或多个列组成的，每一列类似java中的 ”属性“ 。</p>
-<p>表中的数据是按行存储的，每一行类似于java中的 ”对象“ 。</p>
-<p><img src="https://github.com/LeatingVan/Image/blob/main/cover/202202071439437.png?raw=true" alt="image-20211115223741649"></p>
+<p><em><strong>注意：增删改都需要commit操作</strong></em></p>
+<h5 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a><strong>添加数据</strong></h5><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User = User(name=username, account=account, password=password)</span><br><span class="line">db.session.add(User)</span><br><span class="line">db.session.commit()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>添加多个数据</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">user1 = User(name=username, account=account, password=password)</span><br><span class="line">user2 = User(name=username, account=account, password=password)</span><br><span class="line">db.session.add_all([user1,user2])</span><br><span class="line">db.session.commit()</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+<p>完整app.py</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, request</span><br><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy</span><br><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置连接数据，//账号密码@127.0.0.1:3306/数据库名称</span></span><br><span class="line">app.config[<span class="string">'SQLALCHEMY_DATABASE_URI'</span>] = <span class="string">'mysql+pymysql://root:whh666?@127.0.0.1:3306/jf2020'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置成 True，SQLAlchemy将会追踪对象的修改并且发送信号，这需要额外的内存，如果不必要的可以禁用它。</span></span><br><span class="line">app.config[<span class="string">'SQLALCHEMY_TRACK_MODIFICATIONS'</span>] = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化SQLAlchemy对象</span></span><br><span class="line">db = SQLAlchemy(app)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建模型,继承db.Model</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span>(<span class="params">db.Model</span>):</span></span><br><span class="line">    <span class="comment"># 定义表和字段</span></span><br><span class="line">    __tablename__ = <span class="string">'user'</span></span><br><span class="line">    <span class="comment"># 定义字段</span></span><br><span class="line">    <span class="built_in">id</span> = db.Column(db.Integer, primary_key=<span class="literal">True</span>)</span><br><span class="line">    name = db.Column(db.String(<span class="number">100</span>))</span><br><span class="line">    account = db.Column(db.String(<span class="number">32</span>))</span><br><span class="line">    password = db.Column(db.String(<span class="number">32</span>))</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/insert'</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert</span>():</span></span><br><span class="line">    user = User(name=<span class="string">'测试插入功能'</span>, account=<span class="string">'123456'</span>, password=<span class="string">'123456'</span>)</span><br><span class="line">    db.session.add(user)</span><br><span class="line">    db.session.commit()</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'插入成功'</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/getUser'</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getUser</span>():</span></span><br><span class="line">    users = User.query.<span class="built_in">all</span>()</span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'getdata.html'</span>, staffs=users)</span><br><span class="line"> </span><br><span class="line">    </span><br><span class="line"><span class="comment"># 尝试更改form()视图函数</span></span><br><span class="line"><span class="comment"># 将 从表单中获得的数据 插入到数据库中</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/form'</span>, methods=[<span class="string">'POST'</span>, <span class="string">'GET'</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">form</span>():</span></span><br><span class="line">    <span class="comment">#request请求对象-&gt;获取数据</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">'POST'</span>:</span><br><span class="line">        <span class="comment"># 获取请求参数</span></span><br><span class="line">        username = request.form.get(<span class="string">'username'</span>)</span><br><span class="line">        account = request.form.get(<span class="string">'account'</span>)</span><br><span class="line">        password = request.form.get(<span class="string">'password'</span>)</span><br><span class="line">        <span class="built_in">print</span>(username + <span class="string">'----'</span> + <span class="built_in">str</span>(account) + <span class="string">'----'</span> + <span class="built_in">str</span>(password))</span><br><span class="line">        staff = User(name=username, account=account, password=password)</span><br><span class="line">        db.session.add(staff)</span><br><span class="line">        db.session.commit()</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'提交成功'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">    	<span class="keyword">return</span> render_template(<span class="string">'form.html'</span>)</span><br><span class="line">    	<span class="comment"># return "提交失败"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<p>在templates文件夹下面新建一个getdata.html</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">{# 直接遍历数据 #} </span><br><span class="line">{#{% for staff in staffs %}#}</span><br><span class="line">{#    {{ staff.name }}<span class="symbol">&amp;nbsp;</span>{{ staff.account }}<span class="symbol">&amp;nbsp;</span>{{ staff.password }}<span class="tag">&lt;<span class="name">br</span>&gt;</span>#}</span><br><span class="line">{#{% endfor %}#}</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">{# 使用表格遍历数据 #} </span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>学号<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>密码<span class="tag">&lt;/<span class="name">th</span>&gt;</span>     </span><br><span class="line">    {% for staff in staffs %}</span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>{{ staff.name }}<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>{{ staff.account }}<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>{{ staff.password }}<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    {% endfor %}</span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
 
                 
             </div>
@@ -571,7 +666,7 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93%20MySQL%20%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/">http://example.com/2022/02/07/%E6%95%B0%E6%8D%AE%E5%BA%93%20MySQL%20%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/</a>
+                    <a href="http://example.com/2022/02/19/flask02/">http://example.com/2022/02/19/flask02/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -609,8 +704,8 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/mysql/">
-                                    <span class="chip bg-color">mysql</span>
+                                <a href="/tags/flask/">
+                                    <span class="chip bg-color">flask</span>
                                 </a>
                             
                         </div>
@@ -658,17 +753,18 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/11/HTML%E5%9F%BA%E7%A1%80/">
+                <a href="/2022/02/19/flask02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="HTML基础">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="flask--web表单">
                         
-                        <span class="card-title">HTML基础</span>
+                        <span class="card-title">flask--web表单</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -678,26 +774,27 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/HTML/" class="post-category">
-                                    HTML
+                            <a href="/categories/flask/" class="post-category">
+                                    flask
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/flask/">
+                        <span class="chip bg-color">flask</span>
                     </a>
                     
                 </div>
@@ -711,13 +808,13 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/07/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
+                <a href="/2022/02/11/flask01/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="两数之和">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="第一个flask程序">
                         
-                        <span class="card-title">两数之和</span>
+                        <span class="card-title">第一个flask程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -728,14 +825,14 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/flask/" class="post-category">
+                                    flask
                                 </a>
                             
                             
@@ -745,8 +842,8 @@ DBMS: 数据库管理系统，又称为数据库软件，用于管理DB中的数
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/flask/">
+                        <span class="chip bg-color">flask</span>
                     </a>
                     
                 </div>
