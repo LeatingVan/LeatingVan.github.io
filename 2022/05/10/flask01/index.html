@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="python异常处理与文件操作, 丽婷的blog">
-    <meta name="description" content="练习定义一个Person类，并且具有name（姓名），age（年龄），sex（性别）等三个属性，并可以：（1）通过三个set方法改变这三个属性的值；（2）可以通过show方法显示Person对象的详细信息。
-定义完成后，请实例化对象，并对三">
+    <meta name="keywords" content="flask01, 丽婷的blog">
+    <meta name="description" content="Flask第一课为什么要用web框架？MVC是一种设计模式，提高了代码的拓展性和复用性，这种模式用于应用程序的分层开发。
+MVC是三个单词的首字母缩写，它们是Model（模型）、View（视图）和Controller（控制）
+
+Model（">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>python异常处理与文件操作 | 丽婷的blog</title>
+    <title>flask01 | 丽婷的blog</title>
     <link rel="icon" type="image/png" href="https://github.com/LeatingVan/Image/blob/main/img/202202051736389.jpg?raw=true">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -323,12 +325,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">python异常处理与文件操作</h1>
+                    <h1 class="description center-align post-title">flask01</h1>
                 </div>
             </div>
         </div>
@@ -444,8 +446,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python/">
-                                <span class="chip bg-color">python</span>
+                            <a href="/tags/flask/">
+                                <span class="chip bg-color">flask</span>
                             </a>
                         
                     </div>
@@ -456,8 +458,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/python/" class="post-category">
-                                python
+                            <a href="/categories/flask/" class="post-category">
+                                flask
                             </a>
                         
                     </div>
@@ -469,7 +471,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-07
+                    2022-05-10
                 </div>
                 
 
@@ -485,7 +487,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -500,123 +502,170 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>定义一个Person类，并且具有name（姓名），age（年龄），sex（性别）等三个属性，并可以：（1）通过三个set方法改变这三个属性的值；（2）可以通过show方法显示Person对象的详细信息。</p>
-<p>定义完成后，请实例化对象，并对三个方法进行调用。</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name, age ,sex</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">        self.sex = sex</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setName</span>(<span class="params">self,name</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setAge</span>(<span class="params">self,age</span>):</span></span><br><span class="line">        self.age = age</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setSex</span>(<span class="params">self,sex</span>):</span></span><br><span class="line">        self.sex = sex</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">show</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Name:'</span>,self.name)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Age:'</span>,self.age)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Sex:'</span>,self.sex)</span><br><span class="line"></span><br><span class="line">pes=Person(<span class="string">"GDPU"</span>,<span class="number">20</span>,<span class="string">"male"</span>)</span><br><span class="line">pes.setSex(<span class="string">"female"</span>)</span><br><span class="line"></span><br><span class="line">pes.show()</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="7-异常"><a href="#7-异常" class="headerlink" title="7.异常"></a>7.异常</h2><blockquote>
-<p>Python使用被称为异常的特殊对象来管理程序执行期间发生的错误。每当发生让Python不知</p>
-<p>所措的错误时，它都会创建一个异常对象。如果你编写了处理该异常的代码，程序将继续运行；</p>
-<p>如果你未对异常进行处理，程序将停止，并显示一个traceback，其中包含有关异常的报告。</p>
-<p>异常是使用try-except代码块处理的。try-except代码块让Python执行指定的操作，同时告</p>
-<p>诉Python发生异常时怎么办。使用了try-except代码块时，即便出现异常，程序也将继续运行</p>
-<p><strong>显示你编写的友好的错误消息</strong>，而不是令用户迷惑的traceback。</p>
-</blockquote>
-<h3 id="7-1处理-ZeroDivisionError-异常"><a href="#7-1处理-ZeroDivisionError-异常" class="headerlink" title="7.1处理 ZeroDivisionError 异常"></a>7.1<strong>处理 ZeroDivisionError 异常</strong></h3><p>下面来看一种导致Python引发异常的简单错误。你可能知道不能将一个数字除以0，但我们</p>
-<p>还是让Python这样做吧：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">5</span>/<span class="number">0</span>) </span><br></pre></td></tr></tbody></table></figure>
-
-<p>显然，Python无法这样做，因此你将看到一个traceback：</p>
-<p>Traceback (most recent call last): </p>
-<p> File “division.py”, line 1, in &lt;module&gt; </p>
-<p> print(5/0) </p>
-<p>ZeroDivisionError: division by zero </p>
-<p>在上述traceback中，指出的错误ZeroDivisionError是一个异常对象。Python无法按你的</p>
-<p>要求做时，就会创建这种对象。在这种情况下，Python将停止运行程序，并指出引发了哪种异常，</p>
-<p>而我们可根据这些信息对程序进行修改。下面我们将告诉Python，发生这种错误时怎么办；这样，</p>
-<p>如果再次发生这样的错误，我们就有备无患了。</p>
-<h4 id="7-1-1-使用-try-except-代码块"><a href="#7-1-1-使用-try-except-代码块" class="headerlink" title="7.1.1 使用 try-except 代码块"></a><strong>7.1.1 使用 try-except 代码块</strong></h4><p>当你认为可能发生了错误时，可编写一个try-except代码块来处理可能引发的异常。你让</p>
-<p>Python尝试运行一些代码，并告诉它如果这些代码引发了指定的异常，该怎么办。</p>
-<p>处理ZeroDivisionError异常的try-except代码块类似于下面这样：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>: </span><br><span class="line">    <span class="built_in">print</span>(<span class="number">5</span>/<span class="number">0</span>) </span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError: </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"You can't divide by zero!"</span>) </span><br></pre></td></tr></tbody></table></figure>
-
-<p>我们将导致错误的代码行print(5/0)放在了一个try代码块中。如果try代码块中的代码运行</p>
-<p>起来没有问题，Python将跳过except代码块；如果try代码块中的代码导致了错误，Python将查找</p>
-<p>这样的except代码块，并运行其中的代码，即其中指定的错误与引发的错误相同。</p>
-<p>在这个示例中，try代码块中的代码引发了ZeroDivisionError异常，因此Python指出了该如</p>
-<p>何解决问题的except代码块，并运行其中的代码。这样，用户看到的是一条友好的错误消息，而</p>
-<p>不是traceback：</p>
-<p>You can’t divide by zero! </p>
-<p>如果try-except代码块后面还有其他代码，程序将接着运行。</p>
-<h4 id="7-1-2-使用异常避免崩溃"><a href="#7-1-2-使用异常避免崩溃" class="headerlink" title="7.1.2 使用异常避免崩溃"></a>7.1.2 使用异常避免崩溃</h4><blockquote>
-<p>发生错误时，如果程序还有工作没有完成，妥善地处理错误就尤其重要。这种情况经常会出</p>
-<p>现在要求用户提供输入的程序中；如果程序能够妥善地处理无效输入，就能再提示用户提供有效</p>
-<p>输入，而不至于崩溃。程序崩溃可不好，但让用户看到traceback也不是好主意。</p>
-<p>不懂技术的用户会被它们搞糊涂，而且如果用户怀有恶意，他会通过traceback获悉你不希望他知道的信息。</p>
-<p>例如，他将知道你的程序文件的名称，还将看到部分不能正确运行的代码。有时候，训练有素的攻击者可根据这些信息判断出可对你的代码发起什么样的攻击。</p>
-</blockquote>
-<p>下面来创建一个只执行除法运算的简单计算器：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"Give me two numbers, and I'll divide them."</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Enter 'q' to quit."</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    first_number = <span class="built_in">input</span>(<span class="string">"\nFirst number: "</span>)</span><br><span class="line">    <span class="keyword">if</span> first_number == <span class="string">'q'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    second_number = <span class="built_in">input</span>(<span class="string">"Second number: "</span>)</span><br><span class="line">    <span class="keyword">if</span> second_number == <span class="string">'q'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    answer = <span class="built_in">int</span>(first_number) / <span class="built_in">int</span>(second_number)</span><br><span class="line">    <span class="built_in">print</span>(answer)</span><br></pre></td></tr></tbody></table></figure>
-
-<p>做出改动:</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"Give me two numbers, and I'll divide them."</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Enter 'q' to quit."</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    first_number = <span class="built_in">input</span>(<span class="string">"\nFirst number: "</span>)</span><br><span class="line">    <span class="keyword">if</span> first_number == <span class="string">'q'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">        </span><br><span class="line">    second_number = <span class="built_in">input</span>(<span class="string">"Second number: "</span>)</span><br><span class="line">    <span class="keyword">if</span> second_number == <span class="string">'q'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        answer = <span class="built_in">int</span>(first_number) / <span class="built_in">int</span>(second_number)</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"You can't divide by 0!"</span>)</span><br></pre></td></tr></tbody></table></figure>
-
-<h3 id="7-2else-和finally-代码块"><a href="#7-2else-和finally-代码块" class="headerlink" title="7.2else 和finally 代码块"></a>7.2else 和finally 代码块</h3><p>通过将可能引发错误的代码放在try-except代码块中</p>
-<p>成功执行的代码都应放到else代码块中</p>
-<p>最后总是要执行的代码都应放到finally代码块中</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError :</span><br><span class="line">    <span class="string">'''异常的父类，可以捕获所有的异常'''</span></span><br><span class="line">    <span class="built_in">print</span> <span class="string">"0不能被除"</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="string">'''保护不抛出异常的代码'''</span></span><br><span class="line">    <span class="built_in">print</span> <span class="string">"没有异常"</span></span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    <span class="built_in">print</span> <span class="string">"最后总是要执行我"</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>让Python尝试执行try代码块中的除法运算，这个代码块只包含可能导致错误的代码。</p>
-<p>依赖于try代码块成功执行的代码都放在else代码块中；在这个示例中，如果除法运算成</p>
-<p>功，我们就使用else代码块来打印结果。</p>
-<p>except代码块告诉Python，出现ZeroDivisionError异常时该怎么办。如果try代码块</p>
-<p>因除零错误而失败，我们就打印一条友好的消息，告诉用户如何避免这种错误。程序将继续运行。</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"Give me two numbers, and I'll divide them."</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">"Enter 'q' to quit."</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    first_number = <span class="built_in">input</span>(<span class="string">"\nFirst number: "</span>)</span><br><span class="line">    <span class="keyword">if</span> first_number == <span class="string">'q'</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    second_number = <span class="built_in">input</span>(<span class="string">"Second number: "</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        answer = <span class="built_in">int</span>(first_number) / <span class="built_in">int</span>(second_number)</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">"You can't divide by 0!"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(answer)</span><br></pre></td></tr></tbody></table></figure>
-
-
-
-<p>try-except-else代码块的工作原理大致如下：Python尝试执行try代码块中的代码；只有可</p>
-<p>能引发异常的代码才需要放在try语句中。有时候，有一些仅在try代码块成功执行时才需要运行</p>
-<p>的代码；这些代码应放在else代码块中。except代码块告诉Python，如果它尝试运行try代码块中</p>
-<p>的代码时引发了指定的异常，该怎么办。</p>
-<h3 id="7-3异常的参数"><a href="#7-3异常的参数" class="headerlink" title="7.3异常的参数"></a>7.3异常的参数</h3><p>一个异常可以带上参数，可作为输出的异常信息参数。</p>
-<p>你可以通过except语句来捕获异常的参数，如下所示：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">5</span>/<span class="number">0</span>) </span><br><span class="line"><span class="keyword">except</span> ExceptionType <span class="keyword">as</span> e:</span><br><span class="line">    <span class="comment">#你可以在这输出 Argument 的值...</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">str</span>(e)) </span><br><span class="line">    <span class="built_in">print</span>(e) </span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">repr</span>(e))</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>1、str(e)</strong></p>
-<p>返回字符串类型，只给出异常信息，不包括异常信息的类型，如1/0的异常信息</p>
-<p>‘integer division or modulo by zero’</p>
-<p><strong>2、repr(e)</strong></p>
-<p>给出较全的异常信息，包括异常信息的类型，如1/0的异常信息</p>
-<p>“ZeroDivisionError(‘integer division or modulo by zero’,)”</p>
-<h3 id="7-4所有异常"><a href="#7-4所有异常" class="headerlink" title="7.4所有异常"></a>7.4所有异常</h3><p><strong>Exception : ‘’’异常的父类，可以捕获所有的异常’’’</strong></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="number">1</span> / <span class="number">0</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    <span class="string">'''异常的父类，可以捕获所有的异常'''</span></span><br><span class="line">    <span class="built_in">print</span> (e)</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="8-文件操作"><a href="#8-文件操作" class="headerlink" title="8.文件操作"></a>8.文件操作</h2><h3 id="读"><a href="#读" class="headerlink" title="读"></a>读</h3><p><code>open()</code> 接收一个文件名和一个模式作为它的参数，<code>r</code> 表示以只读模式打开文件。想要往文件中写数据的话，则用<code>w</code> 作为参数。</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'data.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = f.read()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'context: {}'</span>.<span class="built_in">format</span>(data))</span><br></pre></td></tr></tbody></table></figure>
-
-<p>python文件对象提供了三个“读”方法： read()、readline() 和 readlines()。每种方法可以接受一个变量以限制每次读取的数据量。</p>
+                <h1 id="Flask第一课"><a href="#Flask第一课" class="headerlink" title="Flask第一课"></a>Flask第一课</h1><h2 id="为什么要用web框架？"><a href="#为什么要用web框架？" class="headerlink" title="为什么要用web框架？"></a>为什么要用web框架？</h2><h4 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a><strong>MVC</strong></h4><p>是一种设计模式，提高了代码的拓展性和复用性，这种模式用于应用程序的分层开发。</p>
+<p>MVC是三个单词的首字母缩写，它们是<strong>Model（模型）、View（视图）和Controller（控制）</strong></p>
 <ul>
-<li>read() 每次读取整个文件，它通常用于将文件内容放到一个字符串变量中。如果文件大于可用内存，为了保险起见，可以反复调用<code>read(size)</code>方法，每次最多读取size个字节的内容。</li>
-<li>readlines() 之间的差异是后者一次读取整个文件，象 .read() 一样。.readlines() 自动将文件内容分析成一个行的列表，该列表可以由 Python 的 for … in … 结构进行处理。</li>
-<li>readline() 每次只读取一行，通常比readlines() 慢得多。仅当没有足够内存可以一次读取整个文件时，才应该使用 readline()。</li>
+<li><strong>Model（模型）</strong> - 模型代表一个存取数据的对象或 JAVA POJO。它也可以带有逻辑，在数据变化时更新控制器。</li>
+<li><strong>View（视图）</strong> - 视图代表模型包含的数据的可视化。</li>
+<li><strong>Controller（控制器）</strong> - 控制器作用于模型和视图上。它控制数据流向模型对象，并在数据变化时更新视图。它使视图与模型分离开。</li>
 </ul>
-<h3 id="写"><a href="#写" class="headerlink" title="写"></a>写</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'data.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = <span class="string">'some data to be written to the file'</span></span><br><span class="line">    f.write(data)</span><br></pre></td></tr></tbody></table></figure>
-
-<p><strong>注意</strong>：’w’这个模式是这样子：如果没有这个文件，就创建一个；如果有，那么就会先把原文件的内容清空再写入新的东西。所以若不想清空原来的内容而是直接在后面追加新的内容，就用’a’这个模式。</p>
-<p>python文件对象提供了两个“写”方法： write() 和 writelines()。</p>
+<p>​        没有前后端分里之前，前端的代码是和后端业务逻辑的代码混合在一起的，也就是说作为后端的程序员必须要懂得前端的知识。开发效率很低。</p>
+<p>​        而前后端分离后，前端人员只需要专注html,js,css的编写即可，后台人员专注于业务逻辑，<strong>接口</strong>的编写即可。</p>
+<p>请求数据只需要调用对应的请求接口即可</p>
+<p>Web(World Wide Web), 诞生最初是为了利用互联网交流工作文档。</p>
+<p><strong>使用WEB框架的优点</strong><br>web网站发展至今，特别是服务器端，涉及到的知识、内容，非常广泛。这对程序员的要求会越来越高。如<br>果采用成熱，稳健的框架，那么一些基础的工作，比如，安全性，数据流控制等都可以让框架来处理，那么<br>程序开发人员可以把精力放在具体的业务逻辑上面。使用框架的优点<br>稳定性和可扩展性强<br>可以障低开发难度，提高开发效率。<br>总结一句话：<strong>避免重复造轮子</strong></p>
+<h4 id="Flask简介"><a href="#Flask简介" class="headerlink" title="Flask简介"></a>Flask简介</h4><p>Flask诞生于2010年，是用Python语言基于Werkzeug工具箱编写的轻量级Web开发框架。</p>
+<p>Flask本身相当于一个内核，其他几乎所有的功能都要用到扩展（邮件扩展Flask-Mail. 用户认证Flask.Login)，都需要用第三方的扩展来实现。其 WSGI 工具箱采用 Werkzeug（路由模块），模板引擎则使用 Jinja2。这两个也是Flask框架的核心。Python最出名的框架要数Diango，此外还有Flask、Tornado等框架。虽然Fiask不是最出名的框架，但是Flask应该算是最灵活的框架之一，这也是Flask受到广大开发者喜爱的原因。</p>
+<p><strong>Flask 常用扩展包：</strong></p>
 <ul>
-<li><p>write()方法和read()、readline()方法对应，是将字符串写入到文件中。</p>
+<li><p>Flask-sQLalchemy: 操怍数据库</p>
 </li>
-<li><p>writelines()方法和readlines()方法对应，也是针对<strong>列表</strong>的操作。它接收一个<strong>字符串列表</strong>作为参数，将他们写入到文件中，换行符不会自动的加入，因此，需要显式的加入换行符。</p>
+<li><p>Flask-migrate： 管理迁移数据库；</p>
+</li>
+<li><p>Flask-Mail:邮件；</p>
+</li>
+<li><p>Flask-WTF：表单；</p>
+</li>
+<li><p>Flask-Bable：提供国际化和本地化支持。翻译；</p>
+</li>
+<li><p>Flask-script： 插入脚本；</p>
+</li>
+<li><p>Flask-Login：认证用户状态；</p>
+</li>
+<li><p>Flask-OpenD：认证；</p>
+</li>
+<li><p>Flask-RESTful：开发REST AP的工具；</p>
+</li>
+<li><p>Flask-Bootstrap：集成前端Twitter Bootstrap框架；</p>
+</li>
+<li><p>Flask-Moment：本地化日期和时间；</p>
+</li>
+<li><p>Flask-Admin：简单而可扩展的管理接口的框架</p>
+</li>
+<li><p>扩展列表：(<a target="_blank" rel="noopener" href="http://flask.pocoo.org/extensions/">http://flask.pocoo.org/extensions/</a>)</p>
 </li>
 </ul>
-<h3 id="关于open-的mode参数"><a href="#关于open-的mode参数" class="headerlink" title="关于open()的mode参数"></a><strong>关于open()的mode参数</strong></h3><p>‘r’：读</p>
-<p>‘w’：写</p>
-<p>‘a’：追加</p>
-<p>‘r+’ == r+w（可读可写，文件若不存在就报错(IOError)）</p>
-<p>‘w+’ == w+r（可读可写，文件若不存在就创建）</p>
-<p>‘a+’ ==a+r（可追加可写，文件若不存在就创建）</p>
-<p>对应的，如果是二进制文件，就都加一个b就好了：</p>
-<p>‘rb’　　‘wb’　　‘ab’　　‘rb+’　　‘wb+’　　‘ab+’ </p>
-<h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>编写程序实现：用户输入一段文字，将该段文字保存到当前目录的test.txt文件中</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">input</span>(<span class="string">"请输入"</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'data01.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(a)</span><br></pre></td></tr></tbody></table></figure>
+<ol>
+<li>中文文档 (<a target="_blank" rel="noopener" href="https://dormousehole.readthedocs.io/en/latest/index.html">欢迎来到 Flask 的世界 — Flask 中文文档 (2.0.2) (dormousehole.readthedocs.io)</a>）</li>
+<li>英文文档 (<a target="_blank" rel="noopener" href="https://flask.palletsprojects.com/en/1.0.x/">Welcome to Flask — Flask Documentation (1.0.x) (palletsprojects.com)</a>)</li>
+</ol>
+<h2 id="第一个flask程序"><a href="#第一个flask程序" class="headerlink" title="第一个flask程序"></a>第一个flask程序</h2><p><code>1.右上角点击File    -&gt;     2.选择New Project-&gt; 3.命名-&gt; 4.创建一个名字为app.py的文件</code></p>
+<p><strong>仅仅需要几行代码，就可以创建一个web程序</strong></p>
+   <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#从flaks类中导入Flask对象</span></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="comment"># 使用Flask创建一个app对象，并且传递__name__参数，name参数用于查找资源的路径</span></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="comment">#路由：@app.route 设置访问的url，这里是设置成一个根路径   </span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/'</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello World!'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#应用启动</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>在D盘主目录下，创建一个文本文件tangshi.txt，文本内容为：</p>
-<p>天门中断楚江开，碧水东流至此回。<br>两岸青山相对出，孤帆一片日边来。</p>
-<p>请编写程序读取该文本文件，并将所有行的内容打印显示。</p>
-<p>参考答案：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">'tangshi.txt'</span>, <span class="string">'r'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = f.readlines()</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> data:</span><br><span class="line">        <span class="built_in">print</span>(line)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>点击蓝色的url地址</p>
+<p>出现Hello World!字样，恭喜你第一个flask程序创建成功了</p>
+<h4 id="创建路由"><a href="#创建路由" class="headerlink" title="创建路由"></a>创建路由</h4><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#这是我们自己创建路由</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/myroute'</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myroute</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'好想出去玩啊'</span>	</span><br></pre></td></tr></tbody></table></figure>
+
+<p>每进行一次就该就要重启服务器，点击右上角绿色的返回按钮。或者app.run那的播放键</p>
+<p>测试<a target="_blank" rel="noopener" href="http://127.0.0.1:5000/myroute%E6%88%90%E5%8A%9F%E6%98%BE%E7%A4%BA">http://127.0.0.1:5000/myroute成功显示</a></p>
+<h4 id="路由限定请求方式"><a href="#路由限定请求方式" class="headerlink" title="路由限定请求方式"></a>路由限定请求方式</h4><p>url默认Get请求</p>
+<p>按F12选择network在测试页面刷新看看</p>
+<p>下面是常见的 HTTP 状态码：</p>
+<ul>
+<li><p>200 - 请求成功</p>
+</li>
+<li><p>301 - 资源（网页等）被永久转移到其它URL</p>
+</li>
+<li><p>400 - Bad Request  客户端请求的语法错误，服务器无法理解</p>
+</li>
+<li><p>404 - 请求的资源（网页等）不存在</p>
+</li>
+<li><p>500 - 内部服务器错误</p>
+<h2 id="HTTP-状态码-HTTP-Status-Code-分类"><a href="#HTTP-状态码-HTTP-Status-Code-分类" class="headerlink" title="HTTP 状态码( HTTP Status Code)分类"></a>HTTP 状态码( <strong>HTTP Status Code</strong>)分类</h2><p>HTTP 状态码由三个十进制数字组成，第一个十进制数字定义了状态码的类型。响应分为五类：信息响应(100–199)，成功响应(200–299)，重定向(300–399)，客户端错误(400–499)和服务器错误 (500–599)：</p>
+<table>
+<thead>
+<tr>
+<th align="left">分类</th>
+<th align="left">分类描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1**</td>
+<td align="left">信息，服务器收到请求，需要请求者继续执行操作</td>
+</tr>
+<tr>
+<td align="left">2**</td>
+<td align="left">成功，操作被成功接收并处理</td>
+</tr>
+<tr>
+<td align="left">3**</td>
+<td align="left">重定向，需要进一步的操作以完成请求</td>
+</tr>
+<tr>
+<td align="left">4**</td>
+<td align="left">客户端错误，请求包含语法错误或无法完成请求</td>
+</tr>
+<tr>
+<td align="left">5**</td>
+<td align="left">服务器错误，服务器在处理请求的过程中发生了错误</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p>在实际的应用中不只有GET请求，还有POST  ,  PUT  ,  DELETE请求如何添加请求方式呢？</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/myroute'</span>,methods=[<span class="string">'POST'</span>,<span class="string">'PUT'</span>]</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">myroute</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'好想出去玩啊'</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>测试一下</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#限制请求方式路由</span><br><span class="line">@app.route('/',methods=['GET','POST'])</span><br><span class="line">def index():</span><br><span class="line">    return 'This is GET' if (request.method =='GET') else 'This is POST'</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="浅谈HTTP中Get、Post、Put与Delete的区别"><a href="#浅谈HTTP中Get、Post、Put与Delete的区别" class="headerlink" title="浅谈HTTP中Get、Post、Put与Delete的区别"></a>浅谈HTTP中Get、Post、Put与Delete的区别</h4><p>1、GET请求会向数据库发索取数据的请求，从而来获取信息，该请求就像数据库的select操作一样，只是用来查询一下数据，不会修改、增加数据，不会影响资源的内容，即该请求不会产生副作用。无论进行多少次操作，结果都是一样的。</p>
+<p>2、与GET不同的是，PUT请求是向服务器端发送数据的，从而改变信息，该请求就像数据库的update操作一样，用来修改数据的内容，但是不会增加数据的种类等，也就是说无论进行多少次PUT操作，其结果并没有不同。</p>
+<p>3、POST请求同PUT请求类似，都是向服务器端发送数据的，但是该请求会改变数据的种类等资源，就像数据库的insert操作一样，会创建新的内容。几乎目前所有的提交操作都是用POST请求的。</p>
+<p>4、DELETE请求顾名思义，就是用来删除某一个资源的，该请求就像数据库的delete操作。</p>
+<p>综上所述，我们可理解为以下：<br>1、POST /url 创建<br>2、DELETE /url/xxx 删除<br>3、PUT /url/xxx 更新<br>4、GET /url/xxx 查看</p>
+<h4 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h4><p>不可能每个人的页面都单独做一个页面，整体相同局部不同。</p>
+<p>对url的参数进行解析，到后端进行处理，返回个性化的界面</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#路由传参</span><br><span class="line">#&lt;参数名&gt;</span><br><span class="line">@app.route('/space/&lt;userid&gt;')</span><br><span class="line">def getparam (userid):#传入参数</span><br><span class="line">    return  '我的id %s'%userid   #显示对应的字符串</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>如果是订单，需要的是整形如何加以限定</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 在参数前面加上   类型:</span><br><span class="line">@app.route('/space/&lt;int:userid&gt;')</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="jinja2模板"><a href="#jinja2模板" class="headerlink" title="jinja2模板"></a>jinja2模板</h3><p>模板是一个 web 开发必备的模块。因为我们在渲染一个网页的时候，并不是只渲染一个纯文本字符串，而是需要渲染一个有富文本标签的页面。这时候我们就需要使用模板了。在Flask 中，配套的模板是 jinja2，jinja2 的作者也是Flask 的作者。这个模板非常的强大，井且执行效率高。以下对了jinja2 做一个简单介绍！</p>
+<p>要渲染模板，通过render_template 方法即可，以下将用一个简单的例子进行讲解：</p>
+<h4 id="渲染"><a href="#渲染" class="headerlink" title="渲染"></a>渲染</h4><p><strong>1.首先导入模板类 render_template</strong></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,render_template</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>2.在模板中创建网页</strong></p>
+<p>在工程目录下创建一个为templates的文件夹</p>
+<p>接着在这个文件夹中创建一个名为index.html的文件</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">我是首页</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>渲染首页</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 渲染首页</span></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/index'</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    <span class="comment"># 填入网页名称</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在<a target="_blank" rel="noopener" href="http://127.0.0.1:5000/index%E4%B8%AD%E6%9F%A5%E7%9C%8B%E6%B8%B2%E6%9F%93%E6%83%85%E5%86%B5">http://127.0.0.1:5000/index中查看渲染情况</a></p>
+<h4 id="变量代码块"><a href="#变量代码块" class="headerlink" title="变量代码块"></a>变量代码块</h4><p><code>使用{{}}来表示变量名，语法叫做变量代码块</code></p>
+<figure class="highlight plaintext"><figcaption><span>param_str }}#}这样注释```	ctrl+/快捷键</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```python</span><br><span class="line">#  导入flask项目,模板</span><br><span class="line">from flask import Flask, render_template</span><br><span class="line"></span><br><span class="line">#  创建Flask应用程序实例，传入__name__定义资源路径</span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line">#  定义路由以及视图函数</span><br><span class="line">@app.route('/index')</span><br><span class="line">def index():</span><br><span class="line">    #  return 'Hello py!'</span><br><span class="line">    param_str = 'hello flask'</span><br><span class="line">    #变量名和html的参数保持一致</span><br><span class="line">    return render_template('index.html', param_str=param_str)</span><br><span class="line"></span><br><span class="line">if __name__ == '__main__':</span><br><span class="line">    app.run(debug=True)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>index<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是首页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">{{ param_str }}</span><br><span class="line">    </span><br><span class="line"> {#注释#} </span><br><span class="line"> {#{{ param_str }}#}</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+
+<p>可以传列表，字典，字符串…</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">'/index'</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    <span class="comment"># 传字符串</span></span><br><span class="line">    param_str = <span class="string">'hello flask'</span></span><br><span class="line">    <span class="comment"># 传列表</span></span><br><span class="line">    param_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">    <span class="comment">#传字典</span></span><br><span class="line">    param_dict ={</span><br><span class="line">        <span class="string">'name'</span>: <span class="string">'leating'</span>,</span><br><span class="line">        <span class="string">'age'</span>: <span class="number">19</span></span><br><span class="line">    }</span><br><span class="line">    <span class="comment"># 变量名和html的参数保持一致</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>, param_str=param_str, param_list=param_list,param_dict=param_dict)</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">我是首页</span><br><span class="line">{#注释#}</span><br><span class="line">{#{{ param_str }}#}</span><br><span class="line">{{ param_str }}</span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">列表</span><br><span class="line">{{ param_list }}</span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">列表取值</span><br><span class="line">{{ param_list.0 }}</span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">列表取值</span><br><span class="line">{{ param_list[0] }}</span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">传字典</span><br><span class="line">姓名：{{ param_dict['name'] }}</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">年龄：{{ param_dict['age'] }}</span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">param_dict{{ param_dict }}</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+<h4 id="控制代码块"><a href="#控制代码块" class="headerlink" title="控制代码块"></a>控制代码块</h4><p>通过控制语句，条件输出for,if</p>
+<p><strong>for</strong>    </p>
+<p>快捷键:输入花括号{再输入for，按Tab快速生成</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% for 参数 in 列表名 %}</span><br><span class="line">	{{参数}}</span><br><span class="line">{% endfor %}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">{% for param in param_list %}</span><br><span class="line">    {{ param }}</span><br><span class="line">{% endfor %}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>if</strong></p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--小于三才输出--&gt;</span></span><br><span class="line">{% for param in param_list %}</span><br><span class="line">    {% if param&lt;3 %}</span><br><span class="line">     {{ param }}</span><br><span class="line">    {% endif %}</span><br><span class="line">{% endfor %}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+
+
+
 
 
                 
@@ -634,7 +683,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">LeatingVan</a>
+                    <a href="/about" rel="external nofollow noreferrer">leating</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -644,7 +693,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/02/07/python%E7%AC%AC%E5%9B%9B%E8%AF%BE/">http://example.com/2022/02/07/python%E7%AC%AC%E5%9B%9B%E8%AF%BE/</a>
+                    <a href="http://example.com/2022/05/10/flask01/">http://example.com/2022/05/10/flask01/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -657,7 +706,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">LeatingVan</a>
+                    <a href="/about" target="_blank">leating</a>
                     !
                 </span>
             </div>
@@ -682,8 +731,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python/">
-                                    <span class="chip bg-color">python</span>
+                                <a href="/tags/flask/">
+                                    <span class="chip bg-color">flask</span>
                                 </a>
                             
                         </div>
@@ -735,13 +784,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/02/07/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
+                <a href="/2022/05/11/flask02/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="两数之和">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Flask02">
                         
-                        <span class="card-title">两数之和</span>
+                        <span class="card-title">Flask02</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -752,14 +801,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-11
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
-                                    算法
+                            <a href="/categories/flask/" class="post-category">
+                                    flask
                                 </a>
                             
                             
@@ -769,8 +818,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/flask/">
+                        <span class="chip bg-color">flask</span>
                     </a>
                     
                 </div>
@@ -784,13 +833,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/07/python%E7%AC%AC%E4%BA%8C%E8%AF%BE/">
+                <a href="/2022/02/19/%EF%BC%81flask03/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python02">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="web表单增删查改功能">
                         
-                        <span class="card-title">python02</span>
+                        <span class="card-title">web表单增删查改功能</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -801,14 +850,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-19
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category">
-                                    python
+                            <a href="/categories/flask/" class="post-category">
+                                    flask
                                 </a>
                             
                             
@@ -818,8 +867,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/flask/">
+                        <span class="chip bg-color">flask</span>
                     </a>
                     
                 </div>
